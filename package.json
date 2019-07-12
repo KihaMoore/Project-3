@@ -7,8 +7,8 @@
     "start": "node server",
     "server": "nodemon server"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Kiha Moore",
+  "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "config": "^3.1.0",

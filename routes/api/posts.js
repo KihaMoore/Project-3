@@ -1,3 +1,5 @@
+//This gonna have a little form area that we can add post, like, comment..etc
+
 const express = require('express');
 const router = express.Router();
 

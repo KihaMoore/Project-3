@@ -1,3 +1,5 @@
+//This file will have route that have anything to do with profiles,fetching them adding them updating them...etc
+
 const express = require('express');
 const router = express.Router();
 
