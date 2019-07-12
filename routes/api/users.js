@@ -26,7 +26,8 @@ router.post('/', [
     'Please enter a password with 6 or more characters'
   ).isLength({ min: 6 })
 ],
-  //Handle the response
+  //Handle the response If there is error, we want to send the error message back.
+  //If it's success,
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -52,7 +53,7 @@ router.post('/', [
       })
 
 
-      //   use user from line32 and set that to new user and passing in the object with the field that we want.
+      //   use user from line41 and set that to new user and passing in the object with the field that we want.
       // This doesn't save the user, just create new instant, we have to call "user.save'" in order to save it to the DB.
       user = new user({
         name,
