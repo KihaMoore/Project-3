@@ -1,5 +1,6 @@
 const express = require('express');
 const connectDB = require('./config/db')
+var mongoose = require("mongoose");
 
 const app = express();
 
@@ -11,7 +12,7 @@ app.use(express.json({ extended: false}));
 
 //This'll take a get request to / put in the call back with request and response
 //Send the data to the brauser
-app.get('/', (req, res) => res.send('API Running'));
+// app.get('/', (req, res) => res.send('API Running'));
 
 //Define Routes
 app.use('/api/users', require('./routes/api/users'));

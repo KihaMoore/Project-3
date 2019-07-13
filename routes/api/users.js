@@ -7,8 +7,7 @@ const gravatar = require('gravatar');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('config');
-//
-const { check, validationResult } = require('express-validator/')
+const { check, validationResult } = require('express-validator/');
 const User = require('../../models/User');
 
 //@route                        POST api/users
@@ -41,7 +40,8 @@ router.post('/', [
       let user = await user.findOne({ email });
 
       if (user) {
-        res.status(400).json({ errors: [{ msg: 'User already exist' }] });
+        return res
+        .status(400).json({ errors: [{ msg: 'User already exist' }] });
       }
 
       //  pass in email and some opstion{}
@@ -50,11 +50,11 @@ router.post('/', [
         s: "2",
         r: "pg",
         d: "mm"
-      })
+      });
 
 
       //   use user from line41 and set that to new user and passing in the object with the field that we want.
-      // This doesn't save the user, just create new instant, we have to call "user.save'" in order to save it to the DB.
+      // This doesn't save the user, just create new instant, we have to call "user.save()'" in order to save it to the DB.
       user = new user({
         name,
         email,
@@ -64,31 +64,31 @@ router.post('/', [
       //we can get promiss from bcrypt.genSalt so we want to use await and we pass in the (10)which recommended from doccumentation. 
       // more we have number more secure but it'll be slow.
       const salt = await bcrypt.genSalt(10);
-      // now we want to take the password from line 54 and set it to await bcrypt.hash(password, salt) and create hash.
+      // now we want to take the password from line 62 and set it to await bcrypt.hash(password, salt) and create hash.
       user.password = await bcrypt.hash(password, salt);
 
-      // Anything return the promiss, we have to put await
+      // Anything return the promiss, we have to put await in front 
       
       await user.save();
 
-      const payload = {
-        user: {
-          id: user.id
-        }
-      };
+       const payload = {
+         user: {
+           id: user.id
+         }
+       };
 
-      // From line 52..Create a user, line60..hash the password,line67 save the user date to the db,
-      //line69..get the payload which include the userID.line78..passing the payload, passing the secret and expire seconds and inside of the callback,we'll get eother err or token
+      // From line 58..Create a user, line66..hash the password,line72 save the user data to the db,
+      //line74..get the payload which include the userID.line78..passing the payload, passing the secret and expire seconds and inside of the callback,we'll get other err or token
 
-      jwt.sign(
-        payload,
-        config.get('jwtSecret'),
-        { expiresIn: 360000 },
-        (err, token) => {
-          if (err) throw err;
-          res.json({ token });
+       jwt.sign(
+         payload,
+         config.get('jwtSecret'),
+         { expiresIn: 360000 },
+         (err, token) => {
+           if (err) throw err;
+           res.json({ token });
 
-        });
+         });
 
     } catch (err) {
       console.error(err.message);

@@ -12,65 +12,33 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <title>Home</title>
-    <style>
+    <link rel="stylesheet" href="style.css">
     
-    header{
-     background: url("./img/home.jpg");
-     background-size:cover;
-     background-position:center;
-     height:100vh;
-     min-height:800px;
-     color: white;
-     position:relative;
-    }
-    @media screen and (max-width:670px){
-        header{
-            min-height:500px;
-        }
-    }
-
-    a.btn{
-        margin-top:30%;
-    }
-    input[type="submit"]{
-        width: 100%;
-        margin-top:50px;
-    }
-
-    .modal-close{
-        position:absolute;
-        top:10px;
-        right:10px;
-        margin:0;
-        padding:0;
-    }
-
-    .container {
-      background:rbga(0,0,0,.6);
-    }
-</style>
+    
 </head>
 <body>
 
     
-    <header class="main-header">
+    <!-- <header class="main-header"> -->
     <nav class="nav-wrapper transparent">
          <div class="container">
-            <a href="#" class="brand-logo blue-text ">Seeds Exchange</a>
+            <a href="#" class="brand-logo blue-text ">Seed love</a>
             <a href="#" class="sidenav-trigger" data-target="mobile-links">
             <i class="material-icons blue-text">menu</i>
             </a>
         <ul class="right hide-on-med-and-down">
-             <li><a href="#login" class="modal-trigger blue-text">Login</a></li>
+            
+           
+            <li><a href="#login" class="modal-trigger blue-text">Login</a></li>
+            
         </ul>
         <ul class="sidenav " id="mobile-links">
-             <li ><a href="#login" class= "modal-trigger blue-text">Ligin</a></li>
-        </ul>
+            
+            
+             <li ><a href="#login" class= "modal-trigger blue-text">Login</a></li>
+       </ul>
    </div>
 </nav>
-
-<div class="container center"></div>
- 
 
    <div class="modal" id="login">
      <h5 class="modal-close">&#10005;</h5>
@@ -99,42 +67,46 @@
              </div><br>     
 
              <input type="submit" value="login" class="btn-large">
-              <a href="#login" class= "modal-trigger blue-text"> <input type="submit" value="signup" class="btn-large brown"></a>
-
-
+             <input type="submit" value="signup" class="btn-large brown">
         </form>
     </div>
 </div>
-</header>
+<!-- </header> -->
 
-<div id="luxy">
-   
+<main id="main">
+    <div id="section01" class="vh-element" data-props="padding-top,padding-bottom" data-values="45,45">
+        <div id="bg-section01" class="luxy-el bg-section" data-speed-y="40"></div>
+        <div class="content-inner">
+            <div class="d-flex justify-content-center oleo">
+                <div class="luxy-el inner-el" data-horizontal="1" data-speed-x="-12">L</div>
+                <div class="luxy-el inner-el" data-horizontal="1" data-speed-x="-6">u</div>
+                <div class="luxy-el inner-el" data-horizontal="1" data-speed-x="-3">x</div>
+                <div class="luxy-el inner-el" data-horizontal="1" data-speed-x="0">y</div>
+                <div class="luxy-el inner-el" data-horizontal="1" data-speed-x="3">.</div>
+                <div class="luxy-el inner-el" data-horizontal="1" data-speed-x="6">j</div>
+                <div class="luxy-el inner-el" data-horizontal="1" data-speed-x="12">s</div>
+            </div>
 
-    <div class="luxy-el first" data-speed-y="5" data-offset="-50"></div>
-    <div class="luxy-el second" data-speed-y="5" data-offset="-50"></div>
-    <div class="luxy-el third" data-speed-y="5" data-offset="-50"></div>
+            <div id="fog01" class="luxy-el vh-element" data-speed-y="-5" data-props="bottom" data-values="-30">
+                <img src="test/img/fog01.png" alt="fog">
+            </div>
+        </div>
+        <div id="section03" class="vh-element" data-props="padding-top" data-values="50">
+            <div id="bg-section02" class="luxy-el bg-section" data-speed-y="-10"></div>
+        </div>
+        <div id="section04">
 
+            <div id="fog02" class="luxy-el vh-element" data-speed-y="-5" data-props="bottom" data-values="-50">
+                <img src="test/img/fog01.png" alt="fog02">
+            </div>
+            <div class="container z-depth-2">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h3 class="oleo title text-center mb-3">Usage</h3>
+                        <p>Wrap the entire content with the element specified in the wrapper option. Please exclude fixed elements.</p>
+                        <div class="code-print">
 
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
+                     </div>
 
 
 
@@ -153,16 +125,21 @@
 
 
 <!-- Compiled and minified JavaScript -->
-    
+        
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script charset="utf-8">luxy.init();</script>   
 <script>
     $(document).ready(function(){
         $('.sidenav').sidenav();
         $('.parallax').parallax();
         $('.modal').modal();
     })
+
+    luxy.init({
+			wrapper: '#luxy',
+			targets : '.luxy-el',
+			wrapperSpeed:  0.08
+		});
 </script>    
 </body>
 </html>
