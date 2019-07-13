@@ -37,7 +37,7 @@ router.post('/', [
 
     //Get users gravatar(pass the user's email into a method)
     try {
-      let user = await user.findOne({ email });
+      let user = await User.findOne({ email });
 
       if (user) {
         return res
@@ -55,7 +55,7 @@ router.post('/', [
 
       //   use user from line41 and set that to new user and passing in the object with the field that we want.
       // This doesn't save the user, just create new instant, we have to call "user.save()'" in order to save it to the DB.
-      user = new user({
+      user = new User({
         name,
         email,
         avatar,
@@ -89,7 +89,7 @@ router.post('/', [
            res.json({ token });
 
          });
-
+      
     } catch (err) {
       console.error(err.message);
       res.status(500).send('server error');
@@ -97,4 +97,6 @@ router.post('/', [
     }
   }
 );
+
+
 module.exports = router;

@@ -5,6 +5,7 @@ var mongoose = require("mongoose");
 const app = express();
 
 //connect Database
+
 connectDB();
 
 //Init Middlewear This will allow us to get the data in (req.body) users.js
