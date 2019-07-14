@@ -5,8 +5,8 @@ module.exports = function (req, res, next) {
   //  get token from header
   const token = req.header('x-auth-token');
 
-  //  check if not token
-
+// It's going to get sent in through the HDP headers and we can verify it and then either allow the user
+// to access if it verifies or send back a response invalid.
   if (!token) {
     return res.status(401).json({ msg: 'No token, authorization denied' })
   }
