@@ -5,12 +5,13 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const auth = require('../../middleware/auth');
 const config = require('config');
+const jwt = require('jsonwebtoken');
 const { check, validationResult } = require('express-validator/');
 
 const User = require('../../models/User');
-//2route  GET api/auth
-//2desc   Test route
-//@access Publicトークン要らない
+//@route   GET api/auth
+//@desc    Authenticate user & get token
+//@access  Publicトークン要らない
 router.get('/', auth, async (req,res) => {
   try{
     const user = await User.findById(req.user.id).select('-password');
