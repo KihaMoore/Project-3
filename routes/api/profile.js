@@ -25,15 +25,18 @@ router.get('/me', auth, async (req,res) => {
     res.json(profile);
     }catch(err) {
     console.error(err.message);
-    res.status(500).send('Server Error..');
+    res.status(500).send('Server Error line28..');
     }
 });
 //@route  POST api/profile
 //@desc   Create or update users profile
 //@access  Private
 
+//we gonna use middleware/auth
 router.post('/', 
 [
+  //we gonna use middleware/auth
+  //2 required field which 'status' and 'skills'
   auth,
   [
   check('status', 'status is required')
@@ -111,10 +114,72 @@ try {
     res.json(profile);
     }catch(err) {
       console.error(err.message);
-  res.status(500).send('Server Error Kiha...');
+  res.status(500).send('Server Error line 117...');
   }
  }
 );
+
+//@route  GET api/profile/
+//@desc   Get all profile
+//@access Publicトークン要らない
+
+router.get('/', async (req, res) => {
+   try {
+     const profiles = await Profile.find().populate('user', ['name', 'avatar']);
+     res.json(profiles);
+   } catch (err) {
+     console.error(err.message);
+     res.status(500).send('Server Error Kiha..');
+     
+   }
+});
+
+//@route  GET api/profile/user/:user_id
+//@desc   Get profile by userID
+//@access Publicトークン要らない
+
+router.get('/user/:user_id', async (req, res) => {
+  try {
+    const profile = await Profile.findOne({user: req.params.user_id}).populate('user',
+     ['name', 'avatar']);
+   
+   if(!profile)
+   return res.status(400).json({msg:'Profile not foud'});
+     
+     res.json(profile);
+  
+    } catch (err) {
+    console.error(err.message);
+    if(err.kind != 'objectId'){
+    return res.status(400).json({msg:'Profile not foud'});
+    }
+    res.status(500).send('Server Error line156');
+    
+  }
+});
+
+//@route  DELETE api/profile/
+//@desc   delete profile, user & posts
+//@access Private
+
+router.delete('/', auth, async (req, res) => {
+  try {
+    //@todo -move users posts
+
+    //Remove profile
+    await Profile.findOneAndRemove({user: req.user.id});
+    //Remove user
+    await User.findOneAndRemove({_id: req.user.id});
+    
+    res.json({msg: 'User Deleted'});
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error177...');
+    
+  }
+});
+
+
 
 module.exports = router;
 
