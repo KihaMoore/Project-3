@@ -14,6 +14,7 @@ const App = () =>  (
       <Navbar />
       <Route exact path="/" component={Landing} />
       <section className="container">
+      {/*we're going to just wrap everything in a switch say route same exact path and we're going to set*/}
        <Switch>
          <Route exact path="/register" component={Register} />
          <Route exact path="/login" component={Login} />

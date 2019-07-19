@@ -1,15 +1,15 @@
 
-import React from 'react'
+ import React from 'react'
 
-const Login = () => {
-    return (
-        <div>
-            <h1>Log In page!</h1>
-        </div>
-    )
-}
+ const Login = () => {
+     return (
+         <div>
+             <h1>Log In page!</h1>
+         </div>
+     )
+ }
 
-export default Login
+ export default Login
 
 
 

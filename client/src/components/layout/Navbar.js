@@ -9,9 +9,9 @@ const Navbar = () => {
             <Link to='/'>Seed</Link>
         </h1>
         <ul>
-            <Link to="/dashboard">Gardenrs</Link> 
-            <Link to="/register">Register</Link>
-            <Link to="/login">Login</Link>
+            <li><Link to="/dashboard">Gardenrs</Link></li> 
+            <li><Link to="/register">Register</Link></li>
+            <li><Link to="/login">Login</Link></li>
         </ul>
     </nav>
 </div>
