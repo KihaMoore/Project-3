@@ -8,7 +8,7 @@ const Landing = () => {
         <div className='landing-inner'>
           <h1 className='x-large'>Seed of life</h1>
           <p className='lead'>
-            Share and exchange our home grown seeds
+            Share and exchange your home grown seeds
           </p>
           <div className='buttons'>
             <Link to="/register" className="btn btn-primary">Signin</Link>

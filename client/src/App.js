@@ -1,4 +1,4 @@
-import React, { Fragment} from 'react';
+import React, { Fragment, useEffect} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
@@ -14,10 +14,10 @@ const App = () =>  (
       <Navbar />
       <Route exact path="/" component={Landing} />
       <section className="container">
-       {/* <switch>
+       <Switch>
          <Route exact path="/register" component={Register} />
          <Route exact path="/login" component={Login} />
-       </switch> */}
+       </Switch> 
       </section>
     </Fragment>
     </Router>
