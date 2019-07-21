@@ -4,12 +4,16 @@ import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
+//Redux
+import {Provider} from 'react-redux';
+import store from './store';
 
 import './App.css';
 
 const App = () =>  (
+  <Provider store={store}>
   <Router>
-  {/* Fragment is like a gohst elemnt that won't show up DOM */}
+    {/* Fragment is like a gohst elemnt that won't show up DOM */}
     <Fragment>
       <Navbar />
       <Route exact path="/" component={Landing} />
@@ -22,6 +26,7 @@ const App = () =>  (
       </section>
     </Fragment>
     </Router>
+    </Provider> 
 );
 
 
