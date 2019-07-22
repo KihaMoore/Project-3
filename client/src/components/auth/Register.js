@@ -1,13 +1,14 @@
   import React,{Fragment, useState} from 'react';
   import { connect } from 'react-redux';
-  import {Link} from 'react-router-dom';
+  import {Link, Redirect} from 'react-router-dom';
   import {setAlert} from '../../actions/alert';
+  import { register} from '../../actions/auth';
   import PropTypes from 'prop-types';
   
   
   
 
-   const Register = ({setAlert}) => {
+   const Register = ({setAlert, register, isAuthenticated}) => {
    /*FormData is State(object&field's velues.), setFormData will be a function that we want to use to update our state
    /*And we want to pull that from useState() hook */
     const [formData, setFormData] = useState({
@@ -30,11 +31,16 @@
    const onSubmit = async e => {
      e.preventDefault();
      if(password !== password2) {
-       props.setAlert('Password do not match', 'danger');
+       setAlert('Password do not match', 'danger');
      }else{
-       console.log(formData)
+       register({name,email,password});
      } 
    }; 
+
+   
+   if(isAuthenticated){
+     return <Redirect to='/dashboard' />;
+   }
 
    return (
       /*whenever you need to wrap the content of a component and you don’t want to add an extra div or other wrapping element to the DOM, use a Fragment.*/
@@ -94,9 +100,15 @@
 
    Register.propTypes= {
      setAlert:PropTypes.func.isRequired,
+     register: PropTypes.func.isRequired,
+     isAuthenticated: PropTypes.bool
    };
 
+   const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+  });
+
    export default connect(
-     null, 
-      {setAlert}
+     mapStateToProps,
+      {setAlert, register}
       )(Register);

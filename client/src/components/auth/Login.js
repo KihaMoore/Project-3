@@ -1,8 +1,11 @@
 import React,{Fragment, useState} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
+import { connect} from 'react-redux';
+import PropTypes from 'prop-types';
+import {login} from '../../actions/auth'
   
 
-   const Register = () => {
+   const Login = ({login, isAuthenticated}) => {
    /*FormData is State(object&field's velues.), setFormData will be a function that we want to use to update our state
    /*And we want to pull that from useState() hook */
     const [formData, setFormData] = useState({
@@ -18,11 +21,14 @@ import {Link} from 'react-router-dom';
   /*we want to use name as a key, so we use []*/
   setFormData({...formData, [e.target.name]: e.target.value});
 
+//Redirect if logged in
+if(isAuthenticated) {
+  return <Redirect to ="/dashboard" />
+}
+
    const onSubmit = async e => {
      e.preventDefault();
-     
-       console.log('SUCCESS!')
-     
+     login(email,password);
    }; 
 
    return (
@@ -64,5 +70,17 @@ import {Link} from 'react-router-dom';
      )
    };
 
-   export default Register
+      Login.propTypes = {
+        login: PropTypes.func.isRequired,
+        isAuthenticated: PropTypes.bool
+      }
+
+      const mapStateToProps = state => ({
+        isAuthenticated: state.auth.isAuthenticated
+      });
+
+   export default connect(
+   mapStateToProps,
+   {login}
+   )(Login);
  
