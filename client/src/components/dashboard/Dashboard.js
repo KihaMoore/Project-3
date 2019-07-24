@@ -13,7 +13,7 @@ const Dashboard =
     useEffect(() => {
        getCurrentProfile();
     }, [getCurrentProfile]);
-    
+    // if the profile is null and it's still loading then we're going to wantto show the spinner.
     return loading && profile === null ? (
     <Spinner /> 
     ) : (
@@ -22,8 +22,12 @@ const Dashboard =
      <p className="lead">
        <i className="fas fa-user" />Welcome {user && user.name}
        </p>
+       {/* //check to see if profile is not equal to null. */}
      {profile !== null ? (
+
+// If it's not equal to no then let's put a fragment
      <Fragment> has </Fragment> 
+     //Else then let's put another fragment
      ):(
      <Fragment> 
        <p>You have not yet setup a profile, please add some info</p>
@@ -47,4 +51,7 @@ const mapStateToProps = state => ({
     profile: state.profile
 });
 
-export default connect(mapStateToProps,{ getCurrentProfile})(Dashboard);
+export default connect(
+  mapStateToProps,
+  { getCurrentProfile}
+  )(Dashboard);
