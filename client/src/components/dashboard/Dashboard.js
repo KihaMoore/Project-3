@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import{ connect} from 'react-redux';
 import Spinner from '../layout/Spinner';
+import Experience from './Experience';
 import DashboardActions from './DashboardActions';
 import{ getCurrentProfile} from '../../actions/profile';
 
@@ -27,9 +28,10 @@ const Dashboard =
        {/* //check to see if profile is not equal to null. */}
      {profile !== null ? (
 
-// If it's not equal to no then let's put a fragment
+// If it's not equal to null then let's put a fragment
      <Fragment> 
        <DashboardActions/>
+       <Experience experience={profile.experoence} />
      </Fragment> 
      //Else then let's put another fragment
      ):(
