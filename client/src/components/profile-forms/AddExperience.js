@@ -14,7 +14,7 @@ const AddExperience = ({ addExperience, history }) => {
     current: false,
     description: ''
   });
-//If currently working, we don't want the to to be to show we wanted to be a disabled endpoint.
+
   const [toDateDisabled, toggleDisabled] = useState(false);
 
   const { company, title, location, from, to, current, description } = formData;

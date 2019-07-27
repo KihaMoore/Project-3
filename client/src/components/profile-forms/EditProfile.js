@@ -1,62 +1,54 @@
-import React, {useState, Fragment, useEffect} from 'react';
-import {Link, withRouter} from 'react-router-dom';
+import React, { Fragment, useState, useEffect } from 'react';
+import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import { createProfile,getCurrentProfile} from '../../actions/profile';
+import { connect } from 'react-redux';
+import { createProfile, getCurrentProfile } from '../../actions/profile';
 
 const EditProfile = ({
-    profile: {profile,loading}, 
-    createProfile, 
-    getCurrentProfile,
-    history
-})=> {
+  profile: { profile, loading },
+  createProfile,
+  getCurrentProfile,
+  history
+}) => {
   const [formData, setFormData] = useState({
-  company: "",
-    website: "",
-    location: "",
-    status: "",
-    skills: "",
-    githubusername: "",
-    bio: "",
-    twitter: "",
-    facebook: "",
-    linkedin: "",
-    youtube: "",
-    instagram: "",
-});
+    company: '',
+    website: '',
+    location: '',
+    status: '',
+    skills: '',
+    githubusername: '',
+    bio: '',
+    twitter: '',
+    facebook: '',
+    linkedin: '',
+    youtube: '',
+    instagram: ''
+  });
 
-const [displaySocialInputs, toggleSocialInputs] = useState(false);
+  const [displaySocialInputs, toggleSocialInputs] = useState(false);
 
-useEffect(() => {
- getCurrentProfile();
+  useEffect(() => {
+    getCurrentProfile();
 
- setFormData({
-     //if it's loading or there's no profile company then have a blank field.If it's not loading and there is profile company then fill it we're going to do the same with the Website all that stuff.
- company: loading || !profile.company ? '' : profile.company,
- website: loading || !profile.website ? '' : profile.website,
- location: loading || !profile.location ? '' : profile.location,
- status: loading || !profile.status ? '' : profile.status,
- skills: loading || !profile.skills ? '' : profile.skills.join(','),
- githubusername:
-   loading || !profile.githubusername ? '' : profile.githubusername,
- bio: loading || !profile.bio ? '' : profile.bio,
- 
- //And then with social with the social stuff we actually have to check to see if there's a social object
-//if that exists and in the data if it does then we'll go ahead and show Twitter Facebook and all that
-//stuff.
- twitter: loading || !profile.social ? '' : profile.social.twitter,
- facebook: loading || !profile.social ? '' : profile.social.facebook,
- linkedin: loading || !profile.social ? '' : profile.social.linkedin,
- youtube: loading || !profile.social ? '' : profile.social.youtube,
- instagram: loading || !profile.social ? '' : profile.social.instagram
-});
-// use effect it'll keep it'll keep reloading.
-//so we want to put some brackets in here and the condition or I guess I should say the prop that Iwant to depend on is loading.
-//So when it loads that's when I want this to run.
-}, [loading, getCurrentProfile]);
+    setFormData({
+      company: loading || !profile.company ? '' : profile.company,
+      website: loading || !profile.website ? '' : profile.website,
+      location: loading || !profile.location ? '' : profile.location,
+      status: loading || !profile.status ? '' : profile.status,
+      skills: loading || !profile.skills ? '' : profile.skills.join(','),
+      githubusername:
+        loading || !profile.githubusername ? '' : profile.githubusername,
+      bio: loading || !profile.bio ? '' : profile.bio,
+      twitter: loading || !profile.social ? '' : profile.social.twitter,
+      facebook: loading || !profile.social ? '' : profile.social.facebook,
+      linkedin: loading || !profile.social ? '' : profile.social.linkedin,
+      youtube: loading || !profile.social ? '' : profile.social.youtube,
+      instagram: loading || !profile.social ? '' : profile.social.instagram
+    });
+  }, [loading, getCurrentProfile]);
 
-const {
-  company,
+  const {
+    company,
     website,
     location,
     status,
@@ -67,14 +59,15 @@ const {
     facebook,
     linkedin,
     youtube,
-    instagram,
+    instagram
   } = formData;
 
-  const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value});
+  const onChange = e =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const onSubmit = e => {
     e.preventDefault();
-    createProfile(formData, history,true);
+    createProfile(formData, history, true);
   };
 
   return (
