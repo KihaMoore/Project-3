@@ -17,15 +17,22 @@ const initialState = {
 };
 
 export default function(state = initialState, action) {
-    const {type, payload} = action;
+  const { type, payload } = action;
 
-switch(type) {
+  switch (type) {
     case GET_POSTS:
-        return{
-            ...state,
-            loading:false
-        };
-        case ADD_POST:
+      return {
+        ...state,
+        posts: payload,
+        loading: false
+      };
+    case GET_POST:
+      return {
+        ...state,
+        post: payload,
+        loading: false
+      };
+    case ADD_POST:
       return {
         ...state,
         posts: [payload, ...state.posts],
@@ -34,7 +41,6 @@ switch(type) {
     case DELETE_POST:
       return {
         ...state,
-        //we're just returning all posts except for the one that matches
         posts: state.posts.filter(post => post._id !== payload),
         loading: false
       };
@@ -73,6 +79,3 @@ switch(type) {
       return state;
   }
 }
-
-
-

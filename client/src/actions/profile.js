@@ -1,3 +1,4 @@
+//
 import axios from 'axios';
 import { setAlert } from './alert';
 
@@ -174,7 +175,7 @@ export const addEducation = (formData, history) => async dispatch => {
     history.push('/dashboard');
   } catch (err) {
     const errors = err.response.data.errors;
-
+console.log("err",errors)
     if (errors) {
       errors.forEach(error => dispatch(setAlert(error.msg, 'danger')));
     }

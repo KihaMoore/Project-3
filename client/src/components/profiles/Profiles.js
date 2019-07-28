@@ -1,3 +1,4 @@
+//
 import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -18,7 +19,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
         <Fragment>
           <h1 className='large text-primary'>Gardeners</h1>
           <p className='lead'>
-            <i className='fab fa-connectdevelop' /> connect with
+            <i className='fab fa-connectdevelop' /> Let's connect with
             gardeners
           </p>
           <div className='profiles'>
@@ -27,7 +28,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
                 <ProfileItem key={profile._id} profile={profile} />
               ))
             ) : (
-              <h4>No profiles found...</h4>
+              <h4>WHYYYY No profiles found...</h4>
             )}
           </div>
         </Fragment>
@@ -49,3 +50,4 @@ export default connect(
   mapStateToProps,
   { getProfiles }
 )(Profiles);
+

@@ -1,3 +1,4 @@
+//
 import React, { Fragment, useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -8,9 +9,6 @@ const AddEducation = ({ addEducation, history }) => {
   const [formData, setFormData] = useState({
     school: '',
     degree: '',
-    fieldofstudy: '',
-    from: '',
-    to: '',
     current: false,
     description: ''
   });
@@ -20,10 +18,6 @@ const AddEducation = ({ addEducation, history }) => {
   const {
     school,
     degree,
-    fieldofstudy,
-    from,
-    to,
-    current,
     description
   } = formData;
 
@@ -32,10 +26,9 @@ const AddEducation = ({ addEducation, history }) => {
 
   return (
     <Fragment>
-      <h1 className='large text-primary'>Add Your Education</h1>
+      <h1 className='large text-primary'>Wish lish</h1>
       <p className='lead'>
-        <i className='fas fa-code-branch' /> Add any school or bootcamp that you
-        have attended
+        <i className='fas fa-code-branch' /> 
       </p>
       <small>* = required field</small>
       <form
@@ -48,24 +41,24 @@ const AddEducation = ({ addEducation, history }) => {
         <div className='form-group'>
           <input
             type='text'
-            placeholder='* School or Bootcamp'
+            placeholder='* name of seed'
             name='school'
             value={school}
             onChange={e => onChange(e)}
-            required
+            
           />
         </div>
         <div className='form-group'>
           <input
             type='text'
-            placeholder='* Degree or Certificate'
+            placeholder='* Number of seed'
             name='degree'
             value={degree}
             onChange={e => onChange(e)}
-            required
+            
           />
         </div>
-        <div className='form-group'>
+        {/* <div className='form-group'>
           <input
             type='text'
             placeholder='Field of Study'
@@ -107,13 +100,13 @@ const AddEducation = ({ addEducation, history }) => {
             onChange={e => onChange(e)}
             disabled={toDateDisabled ? 'disabled' : ''}
           />
-        </div>
+        </div> */}
         <div className='form-group'>
           <textarea
             name='description'
             cols='30'
             rows='5'
-            placeholder='Program Description'
+            placeholder='Seed Description'
             value={description}
             onChange={e => onChange(e)}
           />

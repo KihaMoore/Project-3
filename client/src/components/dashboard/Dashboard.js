@@ -1,3 +1,4 @@
+//
 import React, { Fragment, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -8,67 +9,61 @@ import Experience from './Experience';
 import Education from './Education';
 import { getCurrentProfile, deleteAccount } from '../../actions/profile';
 
-
-
-const Dashboard = 
-({getCurrentProfile, 
+const Dashboard = ({
+  getCurrentProfile,
   deleteAccount,
-  auth: {user},
-  profile: {profile, loading} 
+  auth: { user },
+  profile: { profile, loading }
 }) => {
-    useEffect(() => {
-       getCurrentProfile();
-    }, [getCurrentProfile]);
-    // if the profile is null and it's still loading then we're going to wantto show the spinner.
-    return loading && profile === null ? (
-    <Spinner /> 
-    ) : (
+  useEffect(() => {
+    getCurrentProfile();
+  }, [getCurrentProfile]);
+
+  return loading && profile === null ? (
+    <Spinner />
+  ) : (
     <Fragment>
-     <h1 className="large text-primary">Dashboard</h1> 
-     <p className="lead">
-       <i className="fas fa-user" />Welcome {user && user.name}
-       </p>
-       {/* //check to see if profile is not equal to null. */}
-     {profile !== null ? (
+      <h1 className='large text-primary'></h1>
+      <p className='lead'>
+        <i className='fas fa-user' /> Welcome {user && user.name}
+      </p>
+      {profile !== null ? (
+        <Fragment>
+          <DashboardActions />
+          <Experience experience={profile.experience} />
+          <Education education={profile.education} />
 
-// If it's not equal to null then let's put a fragment
-     <Fragment> 
-       <DashboardActions/>
-       <Experience experience={profile.experoence} />
-       <Education education={profile.education} />
-
-       <div className='my-2'>
+          <div className='my-2'>
             <button className='btn btn-danger' onClick={() => deleteAccount()}>
               <i className='fas fa-user-minus' /> Delete My Account
             </button>
           </div>
-     </Fragment> 
-     //Else then let's put another fragment
-     ):(
-     <Fragment> 
-       <p>You have not yet setup a profile, please add some info</p>
-       <Link to='/create-profile' className="btn btn-primary my-1">
-         Create a Profile
-       </Link>
-       </Fragment>
-     )}
-     </Fragment>
-    );
-     };
+        </Fragment>
+      ) : (
+        <Fragment>
+          <p>You have not yet setup a profile, please add some info</p>
+          <Link to='/create-profile' className='btn btn-primary my-1'>
+            Create Profile
+          </Link>
+        </Fragment>
+      )}
+    </Fragment>
+  );
+};
 
-     Dashboard.propTypes = {
-      getCurrentProfile: PropTypes.func.isRequired,
-      deleteAccount: PropTypes.func.isRequired,
-      auth: PropTypes.object.isRequired,
-      profile: PropTypes.object.isRequired
-    };
-    
+Dashboard.propTypes = {
+  getCurrentProfile: PropTypes.func.isRequired,
+  deleteAccount: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  profile: PropTypes.object.isRequired
+};
+
 const mapStateToProps = state => ({
-    auth: state.auth,
-    profile: state.profile
+  auth: state.auth,
+  profile: state.profile
 });
 
 export default connect(
   mapStateToProps,
-  { getCurrentProfile, deleteAccount}
-  )(Dashboard);
+  { getCurrentProfile, deleteAccount }
+)(Dashboard);

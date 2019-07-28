@@ -8,7 +8,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <ul>
       <li>
-        <Link to='/profiles'>Developers</Link>
+        <Link to='/profiles'>Gardeners</Link>
       </li>
       <li>
         <Link to='/posts'>Posts</Link>
@@ -16,7 +16,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       <li>
         <Link to='/dashboard'>
           <i className='fas fa-user' />{' '}
-          <span className='hide-sm'>Dashboard</span>
+          <span className='hide-sm'>Your-shed</span>
         </Link>
       </li>
       <li>
@@ -57,6 +57,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 };
 
 Navbar.propTypes = {
+  //logout action as props
   logout: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
 };
