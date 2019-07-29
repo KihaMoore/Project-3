@@ -12,12 +12,12 @@ const EditProfile = ({
   history
 }) => {
   const [formData, setFormData] = useState({
-    company: '',
-    website: '',
+    // company: '',
+    // website: '',
     location: '',
     status: '',
-    skills: '',
-    githubusername: '',
+    favoriteplants: '',
+    // githubusername: '',
     bio: '',
     twitter: '',
     facebook: '',
@@ -32,13 +32,11 @@ const EditProfile = ({
     getCurrentProfile();
 
     setFormData({
-      company: loading || !profile.company ? '' : profile.company,
-      website: loading || !profile.website ? '' : profile.website,
+      // company: loading || !profile.company ? '' : profile.company,
+      // website: loading || !profile.website ? '' : profile.website,
       location: loading || !profile.location ? '' : profile.location,
       status: loading || !profile.status ? '' : profile.status,
-      skills: loading || !profile.skills ? '' : profile.skills.join(','),
-      githubusername:
-        loading || !profile.githubusername ? '' : profile.githubusername,
+      favoriteplants: loading || !profile.favoriteplants ? '' : profile.favoriteplants.join(','),
       bio: loading || !profile.bio ? '' : profile.bio,
       twitter: loading || !profile.social ? '' : profile.social.twitter,
       facebook: loading || !profile.social ? '' : profile.social.facebook,
@@ -49,12 +47,11 @@ const EditProfile = ({
   }, [loading, getCurrentProfile]);
 
   const {
-    company,
-    website,
+    //company,
+    // website,
     location,
     status,
-    skills,
-    githubusername,
+    favoriteplants,
     bio,
     twitter,
     facebook,
@@ -79,8 +76,8 @@ const EditProfile = ({
       </p>
       <small>* = required field</small>
       <form className='form' onSubmit={e => onSubmit(e)}>
-        <div className='form-group'>
-          <select name='status' value={status} onChange={e => onChange(e)}>
+        {/* <div className='form-group'> */}
+          {/* <select name='status' value={status} onChange={e => onChange(e)}>
             <option>* Select Professional Status</option>
             <option value='Developer'>Developer</option>
             <option value='Junior Developer'>Junior Developer</option>
@@ -90,12 +87,12 @@ const EditProfile = ({
             <option value='Instructor'>Instructor or Teacher</option>
             <option value='Intern'>Intern</option>
             <option value='Other'>Other</option>
-          </select>
-          <small className='form-text'>
+          </select> */}
+          {/* <small className='form-text'>
             Give us an idea of where you are at in your career
-          </small>
-        </div>
-        <div className='form-group'>
+          </small> */}
+        {/* </div> */}
+        {/* <div className='form-group'>
           <input
             type='text'
             placeholder='Company'
@@ -106,19 +103,19 @@ const EditProfile = ({
           <small className='form-text'>
             Could be your own company or one you work for
           </small>
-        </div>
-        <div className='form-group'>
+        </div> */}
+        {/* <div className='form-group'>
           <input
             type='text'
             placeholder='Website'
             name='website'
             value={website}
             onChange={e => onChange(e)}
-          />
-          <small className='form-text'>
+          /> */}
+          {/* <small className='form-text'>
             Could be your own or a company website
           </small>
-        </div>
+        </div> */}
         <div className='form-group'>
           <input
             type='text'
@@ -134,16 +131,16 @@ const EditProfile = ({
         <div className='form-group'>
           <input
             type='text'
-            placeholder='* Skills'
-            name='skills'
-            value={skills}
+            placeholder='* Favorite plants'
+            name='favoriteplants'
+            value={favoriteplants}
             onChange={e => onChange(e)}
           />
           <small className='form-text'>
-            Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)
+            Please use comma separated values (eg. Lavender, Lemon Grass, Cherry blossom)
           </small>
         </div>
-        <div className='form-group'>
+        {/* <div className='form-group'>
           <input
             type='text'
             placeholder='Github Username'
@@ -155,7 +152,7 @@ const EditProfile = ({
             If you want your latest repos and a Github link, include your
             username
           </small>
-        </div>
+        </div> */}
         <div className='form-group'>
           <textarea
             placeholder='A short bio of yourself'

@@ -65,23 +65,6 @@ export const getProfileById = userId => async dispatch => {
   }
 };
 
-// Get Github repos
-export const getGithubRepos = username => async dispatch => {
-  try {
-    const res = await axios.get(`/api/profile/github/${username}`);
-
-    dispatch({
-      type: GET_REPOS,
-      payload: res.data
-    });
-  } catch (err) {
-    dispatch({
-      type: PROFILE_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status }
-    });
-  }
-};
-
 // Create or update profile
 export const createProfile = (
   formData,
@@ -121,8 +104,8 @@ export const createProfile = (
   }
 };
 
-// Add Experience
-export const addExperience = (formData, history) => async dispatch => {
+// Add seed 
+export const addSeed = (formData, history) => async dispatch => {
   try {
     const config = {
       headers: {
@@ -130,14 +113,14 @@ export const addExperience = (formData, history) => async dispatch => {
       }
     };
 
-    const res = await axios.put('/api/profile/experience', formData, config);
+    const res = await axios.put('/api/profile/seed', formData, config);
 
     dispatch({
       type: UPDATE_PROFILE,
       payload: res.data
     });
 
-    dispatch(setAlert('Experience Added', 'success'));
+    dispatch(setAlert('Your seed Added', 'success'));
 
     history.push('/dashboard');
   } catch (err) {
@@ -154,8 +137,8 @@ export const addExperience = (formData, history) => async dispatch => {
   }
 };
 
-// Add Education
-export const addEducation = (formData, history) => async dispatch => {
+// Add Seed wish list
+export const addWishList = (formData, history) => async dispatch => {
   try {
     const config = {
       headers: {
@@ -163,14 +146,14 @@ export const addEducation = (formData, history) => async dispatch => {
       }
     };
 
-    const res = await axios.put('/api/profile/education', formData, config);
+    const res = await axios.put('/api/profile/wishlist', formData, config);
 
     dispatch({
       type: UPDATE_PROFILE,
       payload: res.data
     });
 
-    dispatch(setAlert('Education Added', 'success'));
+    dispatch(setAlert('Wish item Added', 'success'));
 
     history.push('/dashboard');
   } catch (err) {
@@ -187,17 +170,17 @@ console.log("err",errors)
   }
 };
 
-// Delete experience
-export const deleteExperience = id => async dispatch => {
+// Delete seed collectiomn item
+export const deleteSeed = id => async dispatch => {
   try {
-    const res = await axios.delete(`/api/profile/experience/${id}`);
+    const res = await axios.delete(`/api/profile/seed/${id}`);
 
     dispatch({
       type: UPDATE_PROFILE,
       payload: res.data
     });
 
-    dispatch(setAlert('Experience Removed', 'success'));
+    dispatch(setAlert('Your seed item removed', 'success'));
   } catch (err) {
     dispatch({
       type: PROFILE_ERROR,
@@ -206,10 +189,10 @@ export const deleteExperience = id => async dispatch => {
   }
 };
 
-// Delete education
-export const deleteEducation = id => async dispatch => {
+// Delete wish Item
+export const deleteWishList = id => async dispatch => {
   try {
-    const res = await axios.delete(`/api/profile/education/${id}`);
+    const res = await axios.delete(`/api/profile/wishlist/${id}`);
 
     dispatch({
       type: UPDATE_PROFILE,

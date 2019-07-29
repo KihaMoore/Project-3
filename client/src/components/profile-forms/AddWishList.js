@@ -3,21 +3,21 @@ import React, { Fragment, useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addEducation } from '../../actions/profile';
+import { addWishList } from '../../actions/profile';
 
-const AddEducation = ({ addEducation, history }) => {
+const AddWishList = ({ addWishList, history }) => {
   const [formData, setFormData] = useState({
-    school: '',
-    degree: '',
-    current: false,
+    seed: '',
+    number: '',
+    // current: false,
     description: ''
   });
 
-  const [toDateDisabled, toggleDisabled] = useState(false);
+  // const [toDateDisabled, toggleDisabled] = useState(false);
 
   const {
-    school,
-    degree,
+    seed,
+    number,
     description
   } = formData;
 
@@ -35,15 +35,15 @@ const AddEducation = ({ addEducation, history }) => {
         className='form'
         onSubmit={e => {
           e.preventDefault();
-          addEducation(formData, history);
+          addWishList(formData, history);
         }}
       >
         <div className='form-group'>
           <input
             type='text'
             placeholder='* name of seed'
-            name='school'
-            value={school}
+            name='seed'
+            value={seed}
             onChange={e => onChange(e)}
             
           />
@@ -52,8 +52,8 @@ const AddEducation = ({ addEducation, history }) => {
           <input
             type='text'
             placeholder='* Number of seed'
-            name='degree'
-            value={degree}
+            name='number'
+            value={number}
             onChange={e => onChange(e)}
             
           />
@@ -120,11 +120,11 @@ const AddEducation = ({ addEducation, history }) => {
   );
 };
 
-AddEducation.propTypes = {
-  addEducation: PropTypes.func.isRequired
+AddWishList.propTypes = {
+  addWishList: PropTypes.func.isRequired
 };
 
 export default connect(
   null,
-  { addEducation }
-)(withRouter(AddEducation));
+  { addWishList }
+)(withRouter(AddWishList));

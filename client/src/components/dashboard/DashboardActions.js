@@ -8,10 +8,10 @@ const DashboardActions = () => {
       <Link to='/edit-profile' className='btn btn-light'>
         <i className='fas fa-user-circle text-primary' /> Edit Profile
       </Link>
-      <Link to='/add-experience' className='btn btn-light'>
+      <Link to='/add-seed' className='btn btn-light'>
         <i className='fab fa-black-tie text-primary' /> Add your seed
       </Link>
-      <Link to='/add-education' className='btn btn-light'>
+      <Link to='/add-wishlist' className='btn btn-light'>
         <i className='fas fa-graduation-cap text-primary' /> Wish list
       </Link>
     </div>

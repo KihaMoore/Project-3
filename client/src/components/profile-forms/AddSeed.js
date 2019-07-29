@@ -3,22 +3,20 @@ import React, { Fragment, useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addExperience } from '../../actions/profile';
+import { addSeed } from '../../actions/profile';
 
-const AddExperience = ({ addExperience, history }) => {
+const AddSeed = ({ addSeed, history }) => {
   const [formData, setFormData] = useState({
-    company: '',
-    title: '',
+    seed: '',
+    number: '',
     location: '',
     from: '',
-    to: '',
-    current: false,
     description: ''
   });
 
-  const [toDateDisabled, toggleDisabled] = useState(false);
+  // const [toDateDisabled, toggleDisabled] = useState(false);
 
-  const { company, title, location, from, to, current, description } = formData;
+  const { seed, number,  from, description } = formData;
 
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -34,38 +32,32 @@ const AddExperience = ({ addExperience, history }) => {
         className='form'
         onSubmit={e => {
           e.preventDefault();
-          addExperience(formData, history);
+          addSeed(formData, history);
         }}
       >
+       
         <div className='form-group'>
           <input
             type='text'
             placeholder='* Name of the seed'
-            name='title'
-            value={title}
+            name='seed'
+            value={seed}
             onChange={e => onChange(e)}
-            required
+           
           />
         </div>
+
         <div className='form-group'>
           <input
             type='text'
-            placeholder='* Number of the seed'
-            name='company'
-            value={company}
+            placeholder='* number of the seed'
+            name='number'
+            value={number}
             onChange={e => onChange(e)}
             required
           />
         </div>
-        {/* <div className='form-group'>
-          <input
-            type='text'
-            placeholder='Location'
-            name='location'
-            value={location}
-            onChange={e => onChange(e)}
-          />
-        </div> */}
+      
         <div className='form-group'>
           <h4>Collection Date</h4>
           <input
@@ -75,31 +67,7 @@ const AddExperience = ({ addExperience, history }) => {
             onChange={e => onChange(e)}
           />
         </div>
-        {/* <div className='form-group'>
-          <p>
-            <input
-              type='checkbox'
-              name='current'
-              checked={current}
-              value={current}
-              onChange={() => {
-                setFormData({ ...formData, current: !current });
-                toggleDisabled(!toDateDisabled);
-              }}
-            />{' '}
-            Current Job
-          </p>
-        </div> */}
-        {/* <div className='form-group'>
-          <h4>To Date</h4>
-          <input
-            type='date'
-            name='to'
-            value={to}
-            onChange={e => onChange(e)}
-            disabled={toDateDisabled ? 'disabled' : ''}
-          />
-        </div> */}
+       
         <div className='form-group'>
           <textarea
             name='description'
@@ -119,12 +87,12 @@ const AddExperience = ({ addExperience, history }) => {
   );
 };
 
-AddExperience.propTypes = {
-  addExperience: PropTypes.func.isRequired
+AddSeed.propTypes = {
+  addSeed: PropTypes.func.isRequired
 };
 
 export default connect(
   null,
-  { addExperience }
-)(withRouter(AddExperience));
+  { addSeed }
+)(withRouter(AddSeed));
 

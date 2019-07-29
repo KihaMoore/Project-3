@@ -12,12 +12,12 @@ const Createprofile = ({
   history,
 }) => {
   const [formData, setFormData] = useState({
-    company: "",
-    website: "",
+    // company: "",
+    // website: "",
     location: "",
     status: "",
-    skills: "",
-    githubusername: "",
+    favoriteplants: "",
+    // githubusername: "",
     bio: "",
     twitter: "",
     facebook: "",
@@ -27,12 +27,11 @@ const Createprofile = ({
   });
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
   const {
-    company,
-    website,
+    // company,
+    // website,
     location,
     status,
-    skills,
-    githubusername,
+    favoriteplants,
     bio,
     twitter,
     facebook,
@@ -61,7 +60,7 @@ const Createprofile = ({
       </p>
       <small>* = required field</small>
       <form className='form' onSubmit={e => onSubmit(e)}>
-        <div className='form-group'>
+        {/* <div className='form-group'>
           <select name='status' value={status} onChange={e => onChange(e)}>
             <option value='0'>* Select Professional Status</option>
             <option value='Developer'>Developer</option>
@@ -72,8 +71,8 @@ const Createprofile = ({
             <option value='Instructor'>Instructor or Teacher</option>
             <option value='Intern'>Intern</option>
             <option value='Other'>Other</option>
-          </select>
-          <small className='form-text'>
+          </select> */}
+          {/* <small className='form-text'>
             Give us an idea of where you are at in your career
           </small>
         </div>
@@ -100,7 +99,7 @@ const Createprofile = ({
           <small className='form-text'>
             Could be your own or a company website
           </small>
-        </div>
+        </div> */}
         <div className='form-group'>
           <input
             type='text'
@@ -116,16 +115,16 @@ const Createprofile = ({
         <div className='form-group'>
           <input
             type='text'
-            placeholder='* Skills'
-            name='skills'
-            value={skills}
+            placeholder='* Favorite Plants'
+            name='favoriteplants'
+            value={favoriteplants}
             onChange={e => onChange(e)}
           />
           <small className='form-text'>
-            Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)
+            Please use comma separated values (eg. Lavender,Roses,Oak Tree)
           </small>
         </div>
-        <div className='form-group'>
+        {/* <div className='form-group'>
           <input
             type='text'
             placeholder='Github Username'
@@ -137,7 +136,7 @@ const Createprofile = ({
             If you want your latest repos and a Github link, include your
             username
           </small>
-        </div>
+        </div> */}
         <div className='form-group'>
           <textarea
             placeholder='A short bio of yourself'
