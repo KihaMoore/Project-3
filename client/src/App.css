@@ -330,7 +330,7 @@ button {
 .navbar {
   display: flex;
   /* background-color: rgb(255, 208, 215); */
-  background-color: white;
+  background-color: transparent;
   color:black;
   justify-content: space-between;
   align-items: center;

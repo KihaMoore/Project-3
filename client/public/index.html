@@ -14,27 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <link rel="stylesheet" href="style.css">
   
-   <script>
-    const parallaxEls = document.querySelectorAll("[data-speed]");
-      
-      window.addEventListener("scroll", scrollHandler);
-      
-      function scrollHandler() {
-        for (const parallaxEl of parallaxEls) {
-          const direction = parallaxEl.dataset.direction == "up" ? "-" : "";
-          const transformY = this.pageYOffset * parallaxEl.dataset.speed;
-          if (parallaxEl.classList.contains("banner-title")) {
-            parallaxEl.style.transform = `translate3d(0,${direction}${transformY}px,0) rotate(-10deg)`;
-          } else if (parallaxEl.classList.contains("banner-subtitle")) {
-            parallaxEl.style.transform = `translate3d(0,${direction}${transformX}px,0) rotate(-1deg)`;
-          } else {
-            parallaxEl.style.transform = `translate3d(0,${direction}${transformY}px,0)`;
-          }
-        }
-      }
-      
-      
-    </script>
+   
     <meta name="theme-color" content="#000000" />
    
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
@@ -45,9 +25,6 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   
-    
-
-
-    
+  
   </body>
 </html>

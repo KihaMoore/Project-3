@@ -9,6 +9,25 @@ const Landing = ({ isAuthenticated}) => {
   return<Redirect to='/dashboard' />;
 }
 
+    const parallaxEls = document.querySelectorAll("[data-speed]");
+      
+      window.addEventListener("scroll", scrollHandler);
+      
+      function scrollHandler() {
+        for (const parallaxEl of parallaxEls) {
+          const direction = parallaxEl.dataset.direction == "up" ? "-" : "";
+          const transformY = this.pageYOffset * parallaxEl.dataset.speed;
+          if (parallaxEl.classList.contains("banner-title")) {
+            parallaxEl.style.transform = `translate3d(0,${direction}${transformY}px,0) rotate(-10deg)`;
+          } else if (parallaxEl.classList.contains("banner-subtitle")) {
+            parallaxEl.style.transform = `translate3d(0,${direction}${transformY}px,0) rotate(-1deg)`;
+          } else {
+            parallaxEl.style.transform = `translate3d(0,${direction}${transformY}px,0)`;
+          }
+        }
+      }
+      
+      
 return(
       <Fragment>
         <section class="banner" data-direction="down" data-speed="0.5">
@@ -18,10 +37,10 @@ return(
          <img class="bee-right" src="img/bee.png" alt="" data-direction="up" data-speed="4"/>
          <img class="bee-right" src="img/nasu.png" alt="" data-direction="up" data-speed="5"/>
          <div class="container">
-            <h1 class="main-title" data-direction="up" data-speed="0.9">Welcome to our seed exchange community!</h1>
+            <h1 class="main-title" data-direction="up" data-speed="1">Welcome to our seed exchange community!</h1>
             </div>
             
-                <a href="#" class="scroll"><span></span></a>
+                {/* <a href="#" class="scroll"><span></span></a> */}
             
          <img class="kabu1" src="img/kabu.png" alt="" data-direction="down" data-speed="1.5"/>
          <img class="chou banner-title" src="img/chou.png" alt="" data-direction="down" data-speed="2"/>
