@@ -9,6 +9,7 @@ const Seed = ({ seed, deleteSeed }) => {
     <tr key={seed._id}>
       <td>{seed.seed}</td>
       <td className="hide-sm">{seed.number}</td>
+      <td className="hide-sm">{seed.description}</td>
       <td>
         <button
           onClick={() => deleteSeed(seed._id)}
@@ -28,8 +29,8 @@ const Seed = ({ seed, deleteSeed }) => {
           <tr>
             <th>Name of the seed</th>
             <th className="hide-sm">Number of the seed</th>
-            <th className="hide-sm">Collection date</th>
-            <th />
+            <th>Discroption</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>{seeds}</tbody>

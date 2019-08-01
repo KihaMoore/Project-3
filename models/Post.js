@@ -2,6 +2,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+// Create the PostSchema with the schema object
 const PostSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,

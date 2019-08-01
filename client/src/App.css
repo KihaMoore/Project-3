@@ -1,9 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Gaegu&display=swap");
+
+
+
+
 /* Global Styles */
 :root {
-  --primary-color: #17a2b8;
+  --primary-color: rgb(74, 245, 179);
   --dark-color: #343a40;
   --light-color: #f4f4f4;
-  --danger-color: #dc3545;
+  --danger-color:rgba(165, 81, 42, 0.37);
   --success-color: #28a745;
 }
 
@@ -14,17 +19,17 @@
 }
 
 body {
-  font-family: 'Raleway', sans-serif;
+  background-color: rgb(243, 188, 70);
+  font-family: 'Gaegu', cursive;
   font-size: 1rem;
   line-height: 1.6;
-  background-color: #fff;
   color: #333;
 }
 
-a {
+ a {
   color: var(--primary-color);
   text-decoration: none;
-}
+} 
 
 ul {
   list-style: none;
@@ -39,16 +44,24 @@ img {
   max-width: 1100px;
   margin: auto;
   overflow: hidden;
-  padding: 0 2rem;
+  padding: 20 2rem;
   margin-top: 6rem;
   margin-bottom: 3rem;
+  border: none;
+}
+
+.dragonfly{
+  height:10%;
+  width:10%;
+  z-index: 1;
 }
 
 /* Text Styles*/
 .x-large {
-  font-size: 4rem;
+  font-size: 5rem;
   line-height: 1.2;
   margin-bottom: 1rem;
+  letter-spacing: 0.2;
 }
 
 .large {
@@ -68,6 +81,12 @@ img {
 
 .text-primary {
   color: var(--primary-color);
+  font-size:5rem;
+}
+
+.text-primary-m{
+  color: var(--primary-color);
+  font-size:2rem;
 }
 
 .text-dark {
@@ -211,7 +230,7 @@ img {
 
 .bg-light,
 .badge-light {
-  border: #ccc solid 1px;
+  border: pink solid 1px;
 }
 
 .round-img {
@@ -220,9 +239,12 @@ img {
 
 .line {
   height: 1px;
-  background: #ccc;
+  /* background:pink; */
   margin: 1.5rem 0;
-}
+  border-bottom:1px;
+} 
+
+
 
 /* Overlay */
 .dark-overlay {
@@ -237,12 +259,14 @@ img {
 /* Forms */
 .form .form-group {
   margin: 1.2rem 0;
+  /* border: none; */
 }
 
 .form .form-text {
   display: block;
   margin-top: 0.3rem;
   color: #888;
+  /* border: none; */
 }
 
 .form input[type='text'],
@@ -255,7 +279,8 @@ img {
   width: 100%;
   padding: 0.4rem;
   font-size: 1.2rem;
-  border: 1px solid #ccc;
+  /* border: none; */
+  
 }
 
 .form input[type='submit'],
@@ -292,24 +317,30 @@ button {
 .table td {
   padding: 1rem;
   text-align: left;
+  /* border: none; */
+
 }
 
 .table th {
   background: var(--light-color);
+  /* border: none; */
 }
 
 /* Navbar */
 .navbar {
   display: flex;
+  /* background-color: rgb(255, 208, 215); */
+  background-color: white;
+  color:black;
   justify-content: space-between;
   align-items: center;
-  padding: 0.7rem 2rem;
+  padding: 1rem 2rem; 
   position: fixed;
-  z-index: 3;
+  z-index: 5;
   width: 100%;
   top: 0;
   border-bottom: solid 1px var(--primary-color);
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .navbar ul {
@@ -317,7 +348,7 @@ button {
 }
 
 .navbar a {
-  color:white;
+  color:grey;
   padding: 0.45rem;
   margin: 0 0.25rem;
 }
@@ -333,7 +364,8 @@ button {
 /* Landing Page */
 .landing {
   position: relative;
-  background: url('./img/showcase.jpg') no-repeat center center/cover;
+  /* background: url('./img/showcase.jpg') no-repeat center center/cover; */
+  background-color: rgb(255, 196, 0);
   height: 100vh;
 }
 
@@ -366,7 +398,7 @@ button {
   grid-template-areas:
     'top top'
     'about about'
-    'exp edu'
+    'exp wishlist'
     'github github';
   grid-gap: 1rem;
 }
@@ -381,7 +413,8 @@ button {
 }
 
 .profile-top img {
-  width: 250px;
+  width: 150px;
+  align-items: center;
 }
 
 .profile-top .icons a {
@@ -405,53 +438,36 @@ button {
   text-align: center;
 }
 
-.profile-exp {
-  grid-area: exp;
+.profile-seed {
+  grid-area: seed;
 }
 
-.profile-edu {
-  grid-area: edu;
+.profile-wishlist {
+  grid-area: wishlist;
 }
 
-.profile-exp h2,
-.profile-edu h2 {
+.profile-seed h1,
+.profile-wishlist h1 {
   margin-bottom: 1rem;
 }
 
-.profile-exp > div,
-.profile-edu > div {
+.profile-seed > div,
+.profile-wishlist > div {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
   border-bottom: #ccc 1px dotted;
 }
 
-.profile-exp > div:last-child,
-.profile-edu > div:last-child {
+.profile-seed > div:last-child,
+.profile-wishlist > div:last-child {
   border: 0;
 }
 
-.profile-exp p,
-.profile-edu p {
+.profile-seed p,
+.profile-wishlist p {
   margin: 0.5rem 0;
 }
 
-.profile-github {
-  grid-area: github;
-}
-
-.profile-github .repo {
-  display: flex;
-}
-
-.profile-github .repo > div:first-child {
-  flex: 7;
-  flex-basis: 70%;
-}
-
-.profile-github > div:last-child {
-  flex: 3;
-  flex-basis: 20%;
-}
 
 /* Posts Page */
 .post-form .post-form-header {
@@ -500,7 +516,7 @@ button {
 
   /* Text Styles */
   .x-large {
-    font-size: 3rem;
+    font-size: 5rem;
   }
 
   .large {
@@ -544,7 +560,7 @@ button {
 
   .profile-top img,
   .profile img {
-    width: 200px;
+    width: 100px;
     margin: auto;
   }
 
@@ -552,9 +568,9 @@ button {
     grid-template-areas:
       'top'
       'about'
-      'exp'
-      'edu'
-      'github';
+      'seed'
+      'wishlist';
+      
   }
 
   .profile-about .favoriteplants {

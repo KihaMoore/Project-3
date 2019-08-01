@@ -9,11 +9,8 @@ const AddWishList = ({ addWishList, history }) => {
   const [formData, setFormData] = useState({
     seed: '',
     number: '',
-    // current: false,
     description: ''
   });
-
-  // const [toDateDisabled, toggleDisabled] = useState(false);
 
   const {
     seed,
@@ -30,7 +27,6 @@ const AddWishList = ({ addWishList, history }) => {
       <p className='lead'>
         <i className='fas fa-code-branch' /> 
       </p>
-      <small>* = required field</small>
       <form
         className='form'
         onSubmit={e => {
@@ -41,7 +37,7 @@ const AddWishList = ({ addWishList, history }) => {
         <div className='form-group'>
           <input
             type='text'
-            placeholder='* name of seed'
+            placeholder='name of seed'
             name='seed'
             value={seed}
             onChange={e => onChange(e)}
@@ -51,56 +47,14 @@ const AddWishList = ({ addWishList, history }) => {
         <div className='form-group'>
           <input
             type='text'
-            placeholder='* Number of seed'
+            placeholder='Number of seed'
             name='number'
             value={number}
             onChange={e => onChange(e)}
             
           />
         </div>
-        {/* <div className='form-group'>
-          <input
-            type='text'
-            placeholder='Field of Study'
-            name='fieldofstudy'
-            value={fieldofstudy}
-            onChange={e => onChange(e)}
-          />
-        </div>
-        <div className='form-group'>
-          <h4>From Date</h4>
-          <input
-            type='date'
-            name='from'
-            value={from}
-            onChange={e => onChange(e)}
-          />
-        </div>
-        <div className='form-group'>
-          <p>
-            <input
-              type='checkbox'
-              name='current'
-              checked={current}
-              value={current}
-              onChange={() => {
-                setFormData({ ...formData, current: !current });
-                toggleDisabled(!toDateDisabled);
-              }}
-            />{' '}
-            Current School
-          </p>
-        </div>
-        <div className='form-group'>
-          <h4>To Date</h4>
-          <input
-            type='date'
-            name='to'
-            value={to}
-            onChange={e => onChange(e)}
-            disabled={toDateDisabled ? 'disabled' : ''}
-          />
-        </div> */}
+      
         <div className='form-group'>
           <textarea
             name='description'

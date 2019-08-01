@@ -2,9 +2,39 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="style.css">
+  
+   <script>
+    const parallaxEls = document.querySelectorAll("[data-speed]");
+      
+      window.addEventListener("scroll", scrollHandler);
+      
+      function scrollHandler() {
+        for (const parallaxEl of parallaxEls) {
+          const direction = parallaxEl.dataset.direction == "up" ? "-" : "";
+          const transformY = this.pageYOffset * parallaxEl.dataset.speed;
+          if (parallaxEl.classList.contains("banner-title")) {
+            parallaxEl.style.transform = `translate3d(0,${direction}${transformY}px,0) rotate(-10deg)`;
+          } else if (parallaxEl.classList.contains("banner-subtitle")) {
+            parallaxEl.style.transform = `translate3d(0,${direction}${transformX}px,0) rotate(-1deg)`;
+          } else {
+            parallaxEl.style.transform = `translate3d(0,${direction}${transformY}px,0)`;
+          }
+        }
+      }
+      
+      
+    </script>
     <meta name="theme-color" content="#000000" />
    
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
@@ -14,6 +44,10 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+  
+    
+
+
     
   </body>
 </html>

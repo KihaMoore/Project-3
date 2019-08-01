@@ -58,15 +58,6 @@ const AddSeed = ({ addSeed, history }) => {
           />
         </div>
       
-        <div className='form-group'>
-          <h4>Collection Date</h4>
-          <input
-            type='date'
-            name='from'
-            value={from}
-            onChange={e => onChange(e)}
-          />
-        </div>
        
         <div className='form-group'>
           <textarea

@@ -9,7 +9,6 @@ import {
   UPDATE_PROFILE,
   CLEAR_PROFILE,
   ACCOUNT_DELETED,
-  GET_REPOS
 } from './types';
 
 // Get current users profile
@@ -199,7 +198,7 @@ export const deleteWishList = id => async dispatch => {
       payload: res.data
     });
 
-    dispatch(setAlert('Education Removed', 'success'));
+    dispatch(setAlert('Wish list item Removed', 'success'));
   } catch (err) {
     dispatch({
       type: PROFILE_ERROR,

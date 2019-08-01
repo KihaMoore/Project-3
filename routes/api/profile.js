@@ -159,12 +159,7 @@ router.put(
       check('number', 'Name of seed is required')
        .not()
        .isEmpty(),
-      // check('seed', 'NUmber of seed is required')
-      //   .not()
-      //   .isEmpty(),
-      // check('from', 'collected date is required')
-      //   .not()
-      //   .isEmpty()
+      
     ]
   ],
   async (req, res) => {

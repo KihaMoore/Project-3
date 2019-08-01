@@ -9,12 +9,13 @@ const WishList = ({ wishlist, deleteWishList }) => {
     <tr key={wish._id}>
       <td>{wish.seed}</td>
       <td className="hide-sm">{wish.number}</td>
+      <td className="hide-sm">{wish.description}</td>
       
       <td>
         <button
           onClick={() => deleteWishList(wish._id)}
           className="btn btn-danger"
-        >
+         >
           Delete
         </button>
       </td>
@@ -29,7 +30,8 @@ const WishList = ({ wishlist, deleteWishList }) => {
           <tr>
             <th>Name of the seed</th>
             <th className="hide-sm">Number of the seed</th>
-            <th />
+            <th>Description</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>{wishlists}</tbody>

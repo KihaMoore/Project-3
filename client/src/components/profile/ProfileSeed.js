@@ -9,9 +9,6 @@ const ProfileSeed = ({
   <div>
     <h3 className="text-dark">{seed}</h3>
     <p>
-      <strong>Name of seed: </strong> {seed}
-    </p>
-    <p>
       <strong>Number of seed: </strong> {number}
     </p>
     <p>

@@ -43,10 +43,10 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   );
 
   return (
-    <nav className='navbar bg-dark'>
+    <nav className='navbar'>
       <h1>
         <Link to='/'>
-          <i className='fas fa-code' /> Seeds
+          <i className='fas fa-round' /> Seeds
         </Link>
       </h1>
       {!loading && (
