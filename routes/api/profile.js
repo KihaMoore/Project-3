@@ -9,6 +9,52 @@ const Profile = require('../../models/Profile');
 const User = require('../../models/User');
 const Post = require('../../models/Post');
 const Image = require('../models/image');
+const ImageRouter = express.Router();
+const multer = require('multer');
+
+const storage = multer.diskStorage({
+  destination: function(req, file, cb){
+    cd(null, './uploads');
+  },
+  filename: function (req, file, cb){
+    cb(null, Data.now() + file.originalname);
+  }
+});
+
+const fileFilter = (req, file, cd) => {
+  if(file.mimetype === 'image/jpeg' || file.minetype === 'image/png') {
+    cb(null, true);
+  }else{
+    cb(null, false);
+  }
+}
+
+const upload = multer({
+  storage: Storage,
+  limits: {
+    filesize: 1024 * 1024 * 5
+  },
+  fileFilter: fileFilter
+});
+
+ImageRouter.route("/uploadmulter")
+.post(upload.single('imageData'),(req, res, next) => {
+  console.log(req.body);
+  const newImage = new Image ({
+    imageName: req.body.imageName,
+    imageData: req.file.path
+  });
+
+  newImage.save()
+  .then((result) => {
+    console.log(result);
+    res.status(200).json({
+      success: true,
+      document: result
+    });
+  })
+    .catch((err) => next(err));
+})
 
 
 // @route    GET api/profile/me
