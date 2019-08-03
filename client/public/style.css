@@ -53,16 +53,9 @@ body {
   position: absolute;
   left: 100px;
   bottom: 400px;
-  max-width: 300px;
+  max-width: 280px;
 }
 
-
-.chou{
-  position: absolute;
-  left: 100px;
-  bottom: 650px;
-  max-width: 100px;
-}
 
 .kabu{
   position: absolute;
@@ -71,11 +64,11 @@ body {
   max-width: 400px;
 }
 
-.bee1{
+.bumbble-bee{
   position: absolute;
-  left: 300px;
+  left: 1px;
   bottom: 400px;
-  max-width: 400px;
+  max-width: 300px;
 }
 
 
@@ -83,21 +76,22 @@ body {
   position: absolute;
   left: 400px;
   top:10px;
-  max-width: 300px;
+  max-width: 200px;
 }
+
+.lemon{
+  position: absolute;
+  left: 700px;
+  top:-50px;
+  max-width: 200px;
+}
+
 
 .beet{
   position: absolute;
   left: 400px;
   bottom: 250px;
   max-width: 500px;
-}
-
-.rabbit {
-  position: absolute;
-  right: 60px;
-  bottom: 2px;
-  max-width: 400px;
 }
 
 .carrot1 {
@@ -116,6 +110,20 @@ body {
   max-width: 450px;
 }
 
+.ladybug{
+  position: absolute;
+  right: 40px;
+  top: 200px;
+  max-width: 100px;
+}
+
+.chou{
+  position: absolute;
+  right: 140px;
+  top: 300px;
+  max-width: 150px;
+}
+
 
 .cabedge {
   position: absolute;
@@ -128,14 +136,21 @@ body {
   position: absolute;
   right:500px;
   bottom: 20px;
-  max-width: 300px;
+  max-width: 250px;
+}
+
+.rabbit {
+  position: absolute;
+   left: 20px; 
+  bottom: 10px;
+  max-width: 400px;
 }
 
 .carrot {
   position: absolute;
-  right: 10px;
+  left: 10px;
   bottom: 10px;
-  max-width: 400px;
+  max-width: 300px;
 }
 
 .bee-left{
@@ -156,10 +171,18 @@ body {
 .risu1
 {
     position: absolute;
+    right:400px;
     bottom: 1px; 
     max-width: 250px;
   }
 
+  .nut
+{
+  position: absolute;
+  right:400px;
+  bottom: 15px; 
+  max-width: 85px;
+} 
 
 .risu
 {
@@ -182,6 +205,13 @@ body {
 .bee-right {
   position: absolute;
   right: 5px;
+  bottom: 20px;
+  max-width: 150px;
+}
+
+.nasu-right {
+  position: absolute;
+  right: 800px;
   bottom: 20px;
   max-width: 150px;
 }

@@ -8,6 +8,8 @@ const { check, validationResult } = require('express-validator/check');
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
 const Post = require('../../models/Post');
+const Image = require('../models/image');
+
 
 // @route    GET api/profile/me
 // @desc     Get current users profile

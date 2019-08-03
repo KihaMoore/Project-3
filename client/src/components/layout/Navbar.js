@@ -9,12 +9,15 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <ul>
       <li>
         <Link to='/profiles'>
-        <i className='fas fa-friend' />{' '}
+        <i className='fas fa-globe' />{' '}
           <span className='hide-sm'>Gardeners</span>
         </Link>
       </li>
       <li>
-        <Link to='/posts'>Posts</Link>
+        <Link to='/posts'>
+        <i className='fas fa-comments' />{' '}
+          <span className='hide-sm'>Community</span>
+        </Link>
       </li>
       <li>
         <Link to='/dashboard'>
@@ -49,7 +52,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <nav className='navbar'>
       <h1>
         <Link to='/'>
-          <i className='fas fa-round' /> Seeds
+          <i className='fas fa-leaf' /> Seeds
         </Link>
       </h1>
       {!loading && (
