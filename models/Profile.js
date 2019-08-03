@@ -6,6 +6,11 @@ const ProfileSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'user'
   },
+
+  imageData: {
+    type:Styring,
+    required: true
+},
  
   location: {
     type: String

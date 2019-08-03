@@ -1,4 +1,4 @@
-//
+
 import React, { useEffect, useState, Fragment } from "react";
 import { Link, withRouter, Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -12,12 +12,9 @@ const Createprofile = ({
   history,
 }) => {
   const [formData, setFormData] = useState({
-    // company: "",
-    // website: "",
     location: "",
     status: "",
     favoriteplants: "",
-    // githubusername: "",
     bio: "",
     twitter: "",
     facebook: "",
@@ -27,10 +24,7 @@ const Createprofile = ({
   });
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
   const {
-    // company,
-    // website,
     location,
-    status,
     favoriteplants,
     bio,
     twitter,

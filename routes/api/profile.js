@@ -44,6 +44,7 @@ ImageRouter.route("/uploadmulter")
     imageName: req.body.imageName,
     imageData: req.file.path
   });
+  
 
   newImage.save()
   .then((result) => {
