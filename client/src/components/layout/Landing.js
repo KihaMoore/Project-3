@@ -52,13 +52,6 @@ return(
      </section>
  
     <section class="banner" data-direction="up" data-speed="0.2">
-     <h1 class="banner-title" data-direction="up" data-speed="0.1">Why seed exchange?</h1>
-     <h2></h2>
-              <div class="video-container" data-direction="up" data-speed="0.01">
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/CzUqYHkXwuo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-
-      {/* <img class="rabbit" src="img/rabbit.png" alt="" data-direction="up" data-speed="2"/> */}
       <img class="carrot" src="img/carrot.png" alt="" data-direction="up" data-speed="1"/>
       <img class="nasu" src="img/nasu.png" alt="" data-direction="up" data-speed="3"/>
       <img class="bumbble-bee" src="img/bumbble-bee.png" alt="" data-direction="up" data-speed="1.5"/>
@@ -66,8 +59,7 @@ return(
         <section className="landing">
          {/* <div className='dark-overlay'> */}
         <div className='landing-inner'>
-          <img className="dragonfly" src="../img/Dragon-fly.jpg" alt=""/>
-          <h1 className='x-large'> Share and exchange your home grown seeds</h1>
+          <h1 className='x-large letter-responsive'> Share and exchange your home grown seeds</h1>
           <div className='buttons'>
             <Link to="/register" className="btn btn-primary">Register</Link>
             <Link to="/login" className="btn btn-light">Login</Link>

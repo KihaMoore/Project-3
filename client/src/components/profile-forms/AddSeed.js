@@ -16,7 +16,7 @@ const AddSeed = ({ addSeed, history }) => {
 
   // const [toDateDisabled, toggleDisabled] = useState(false);
 
-  const { seed, number,  from, description } = formData;
+  const { seed, number, description } = formData;
 
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -25,9 +25,9 @@ const AddSeed = ({ addSeed, history }) => {
     <Fragment>
       <h1 className='large text-primary'>Add Your seed coolections</h1>
       <p className='lead'>
-        <i className='fas fa-code-branch' /> 
+        <i className='fas fa-leaf' /> 
       </p>
-      <small>* = required field</small>
+      <small></small>
       <form
         className='form'
         onSubmit={e => {

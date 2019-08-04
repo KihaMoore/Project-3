@@ -216,23 +216,14 @@ body {
   max-width: 150px;
 }
 
+
 .content {
   position: relative;
   padding: 20px 0;
   background: white;
 }
 
-.video-container{
-  float: none;
-  clear: both;
-  width: 700px;
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 25px;
-  height: 0;
-  margin: 0 auto;
-  max-width: 100%;
-}
+
 
 .container {
   max-width: 1100px;
@@ -256,6 +247,42 @@ footer a {
   text-decoration: none;
 }
 
+/* Login  */
+
+.ladybug-login{
+  position: absolute;
+  right: 300px;
+  bottom: 150px;
+  max-width: 150px;
+  z-index: 2;
+}
+
+
+.dandelion-login{
+  position: absolute;
+  bottom:50px;
+  max-width: 350px;
+  right:130px;
+
+}
+
+.lavender-register{
+  position: absolute;
+  right: 200px;
+  bottom: 40px;
+  max-width: 400px;
+}
+
+.bee-register{
+  position: absolute;
+  right: 200px;
+  bottom: 300px;
+  max-width: 100px;
+}
+
+.h1letter{
+  color:white;
+}
 
 
 @keyframes RightToLeft {
@@ -327,10 +354,62 @@ h1 {
 
 
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 650px) {
   body {
     font-size: 14px;
   }
 
+  .cabedge1{
+    max-width: 250px;
+  }
   
+  .kabu1{
+    
+    max-width: 160px;
+  }
+  
+  .ladybug-login{
+    position: absolute;
+    right: 100px;
+    max-width: 100px;
+    bottom:50px;
+  }
+
+  .dandelion-login{
+    position: absolute;
+    max-width: 270px;
+    bottom:1px;
+    right:3px;
+  
+  }
+
+  .lavender-register{
+    position: absolute;
+    right: 1px;
+    bottom: 1px;
+    max-width: 200px;
+  }
+  
+  .bee-register{
+    position: absolute;
+    right: 10px;
+    bottom: 80px;
+    max-width: 70px;
+  }
+
+  .main-title{
+    font-size:2rem;
+  }
+  
+  .cabedge1 {
+    position: absolute;
+    right: 4px;
+    top: 2px;
+    max-width: 20px;
+  }
+
+  h1.letter-responsive{
+    font-size:0.9rem;
+    text-align: center;
+  }
 }

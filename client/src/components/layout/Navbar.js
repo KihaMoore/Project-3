@@ -9,8 +9,8 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <ul>
       <li>
         <Link to='/profiles'>
-        <i className='fas fa-globe' />{' '}
-          <span className='hide-sm'>Gardeners</span>
+        <i className='fas fa-globe --light-color' />{' '}
+          <span className='hide-sm --light-color'>Gardeners</span>
         </Link>
       </li>
       <li>
