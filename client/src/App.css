@@ -413,7 +413,7 @@ button {
 }
 
 .profile-top img {
-  width: 150px;
+  width: 120px;
   align-items: center;
 }
 
@@ -503,6 +503,8 @@ button {
   font-size: 0.8rem;
   margin-bottom: 0.5rem;
 }
+
+
 
 /* Mobile Styles */
 @media (max-width: 700px) {

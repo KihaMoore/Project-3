@@ -1,4 +1,4 @@
-//
+
 import axios from 'axios';
 import { setAlert } from './alert';
 
@@ -168,6 +168,7 @@ console.log("err",errors)
     });
   }
 };
+
 
 // Delete seed collectiomn item
 export const deleteSeed = id => async dispatch => {

@@ -8,55 +8,6 @@ const { check, validationResult } = require('express-validator/check');
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
 const Post = require('../../models/Post');
-const Image = require('../models/image');
-const ImageRouter = express.Router();
-const multer = require('multer');
-
-const storage = multer.diskStorage({
-  destination: function(req, file, cb){
-    cd(null, './uploads');
-  },
-  filename: function (req, file, cb){
-    cb(null, Data.now() + file.originalname);
-  }
-});
-
-const fileFilter = (req, file, cd) => {
-  if(file.mimetype === 'image/jpeg' || file.minetype === 'image/png') {
-    cb(null, true);
-  }else{
-    cb(null, false);
-  }
-}
-
-const upload = multer({
-  storage: Storage,
-  limits: {
-    filesize: 1024 * 1024 * 5
-  },
-  fileFilter: fileFilter
-});
-
-ImageRouter.route("/uploadmulter")
-.post(upload.single('imageData'),(req, res, next) => {
-  console.log(req.body);
-  const newImage = new Image ({
-    imageName: req.body.imageName,
-    imageData: req.file.path
-  });
-  
-
-  newImage.save()
-  .then((result) => {
-    console.log(result);
-    res.status(200).json({
-      success: true,
-      document: result
-    });
-  })
-    .catch((err) => next(err));
-})
-
 
 // @route    GET api/profile/me
 // @desc     Get current users profile
@@ -65,7 +16,7 @@ router.get('/me', auth, async (req, res) => {
   try {
     const profile = await Profile.findOne({ user: req.user.id }).populate(
       'user',
-      ['name', 'avatar']
+      ['name', 'file']
     );
 
     if (!profile) {
@@ -87,8 +38,7 @@ router.post(
   [
     auth,
     [
-      
-      check('favoriteplants', 'Favorite plant is required')
+        check('favoriteplants', 'Favorite plant is required')
         .not()
         .isEmpty()
     ]
@@ -102,7 +52,6 @@ router.post(
     const {
       location,
       bio,
-      status,
       favoriteplants,
       youtube,
       facebook,
@@ -116,7 +65,6 @@ router.post(
     profileFields.user = req.user.id;
     if (location) profileFields.location = location;
     if (bio) profileFields.bio = bio;
-    if (status) profileFields.status = status;
     if (favoriteplants) {
       profileFields.favoriteplants = favoriteplants.split(',').map(favoriteplant => favoriteplant.trim());
     }
@@ -197,6 +145,10 @@ router.delete('/', auth, async (req, res) => {
   }
 });
 
+
+
+
+
 // @route    PUT api/profile/seed
 // @desc     Add profile seed
 // @access   Private
@@ -272,8 +224,8 @@ router.delete('/seed/:seed_id', auth, async (req, res) => {
   }
 });
 
-// @route    PUT api/profile/education
-// @desc     Add profile education
+// @route    PUT api/profile/wish list
+// @desc     Add profile wish list
 // @access   Private
 router.put(
   '/wishlist',

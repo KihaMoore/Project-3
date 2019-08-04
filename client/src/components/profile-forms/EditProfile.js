@@ -1,4 +1,4 @@
-//
+
 import React, { Fragment, useState, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -12,8 +12,6 @@ const EditProfile = ({
   history
 }) => {
   const [formData, setFormData] = useState({
-    // company: '',
-    // website: '',
     location: '',
     status: '',
     favoriteplants: '',
@@ -32,7 +30,6 @@ const EditProfile = ({
 
     setFormData({
       location: loading || !profile.location ? '' : profile.location,
-      status: loading || !profile.status ? '' : profile.status,
       favoriteplants: loading || !profile.favoriteplants ? '' : profile.favoriteplants.join(','),
       bio: loading || !profile.bio ? '' : profile.bio,
       twitter: loading || !profile.social ? '' : profile.social.twitter,
@@ -45,7 +42,6 @@ const EditProfile = ({
 
   const {
     location,
-    status,
     favoriteplants,
     bio,
     twitter,
@@ -69,7 +65,7 @@ const EditProfile = ({
       <p className='lead'>
         <i className='fas fa-user' /> Add some changes to your profile
       </p>
-      {/* <small>* = required field</small> */}
+    
       <form className='form' onSubmit={e => onSubmit(e)}>
        
         <div className='form-group'>
@@ -114,6 +110,17 @@ const EditProfile = ({
             className='btn btn-light'
           >
             Add Social Network Links
+          </button>
+          <span>Optional</span>
+        </div>
+
+        <div className='my-2'>
+          <button
+            onClick={e => onChange(e)}
+            type='button'
+            className='btn btn-light'
+          >
+            Add Your Profile picture
           </button>
           <span>Optional</span>
         </div>
