@@ -1,16 +1,14 @@
-//
+
 import React from 'react';
 import PropTypes from 'prop-types';
-import Moment from 'react-moment';
-import moment from 'moment';
 
 const ProfileWishList = ({
   wishlist: { seed, number, description }
 }) => (
   <div>
-    <h3 className="text-dark">{seed}</h3>
+    <h2 className="text-dark noseedcollection">{seed}</h2>
     <p>
-      <strong>Number of the seed: </strong> {number}
+      <strong className="noseedcollection">Number of the seed: </strong> {number}
     </p>
     <p>
       <strong>Description: </strong> {description}

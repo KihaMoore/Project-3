@@ -5,9 +5,9 @@
 
 /* Global Styles */
 :root {
-  --primary-color: rgb(74, 245, 179);
+  --primary-color: rgba(131, 144, 53, 0.993);
   --dark-color: #343a40;
-  --light-color: #f4f4f4;
+  --light-color: #f6f3f3;
   --danger-color:rgba(165, 81, 42, 0.37);
   --success-color: #28a745;
 }
@@ -62,12 +62,6 @@ img {
   margin-top: 6rem;
   margin-bottom: 3rem;
   border: none;
-}
-
-.dragonfly{
-  height:10%;
-  width:10%;
-  z-index: 1;
 }
 
 /* Text Styles*/
@@ -205,6 +199,11 @@ img {
   color: #333;
 }
 
+.btn-pink{
+  background-color:rgba(131, 144, 53, 0.993);
+  color:white;
+}
+
 .btn-dark,
 .bg-dark,
 .badge-dark,
@@ -328,22 +327,26 @@ button {
 
 .table th,
 .table td {
-  padding: 1rem;
+  padding: 0.5rem;
   text-align: left;
-  border: 1px, white; 
+  border: 1px, rgb(74, 245, 179);; 
 
 }
 
-.table th {
+ .table th {
   background: var(--light-color);
-  border: 1px, white; 
+  border: 1px, rgb(74, 245, 179);; 
   /* border: none; */
-}
+ 
+ }
 
+ .noseedcollection{
+   font-size: 3rem;
+ }
 /* Navbar */
 .navbar {
   display: flex;
-  background-color: transparent;
+  background-color: rgb(243, 188, 70);
   color:black;
   justify-content: space-between;
   align-items: center;
@@ -352,7 +355,6 @@ button {
   z-index: 5;
   width: 100%;
   top: 0;
-  border-bottom: solid 1px var(--primary-color);
   opacity: 1;
 }
 

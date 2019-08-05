@@ -1,4 +1,4 @@
-//
+
 import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -26,7 +26,7 @@ const Profile = ({
         <Spinner />
       ) : (
         <Fragment>
-          <Link to='/profiles' className='btn btn-light'>
+          <Link to='/profiles' className='btn '>
             Back To Profiles
           </Link>
           {auth.isAuthenticated &&
@@ -40,7 +40,7 @@ const Profile = ({
             <ProfileTop profile={profile} />
             <ProfileAbout profile={profile} />
             <div className='profile-exp bg-white p-2'>
-              <h2 className='text-primary'>Seed collection</h2>
+              <h5 className='text-primary'>Seed collection</h5>
               {profile.seed.length > 0 ? (
                 <Fragment>
                   {profile.seed.map(seed => (
@@ -51,12 +51,12 @@ const Profile = ({
                   ))}
                 </Fragment>
               ) : (
-                <h4>No seeds collection</h4>
+                <h2 class="noseedcollection">No seeds collection</h2>
               )}
             </div>
 
             <div className='profile-edu bg-white p-2'>
-              <h2 className='text-primary'>Wish List</h2>
+              <h5 className='text-primary'>Wish List</h5>
               {profile.wishlist.length > 0 ? (
                 <Fragment>
                   {profile.wishlist.map(wishlist => (
@@ -67,7 +67,7 @@ const Profile = ({
                   ))}
                 </Fragment>
               ) : (
-                <h4>No wish list</h4>
+                <h2 class="noseedcollection">No wish list</h2>
               )}
             </div>
           </div>

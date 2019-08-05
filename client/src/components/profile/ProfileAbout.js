@@ -17,10 +17,10 @@ const ProfileAbout = ({
         <div className='line' />
       </Fragment>
     )}
-    <h2 className='text-primary'>Favorite plant</h2>
+    <h4 className='text-primary'>Favorite plant</h4>
     <div className='favoriteplants'>
       {favoriteplants.map((favoriteplant, index) => (
-        <div key={index} className='p-1'>
+        <div key={index} className='p-1 noseedcollection'>
           <i className='fas fa-check' /> {favoriteplant}
         </div>
       ))}

@@ -28,9 +28,9 @@ const WishList = ({ wishlist, deleteWishList }) => {
       <table className="table">
         <thead>
           <tr>
-            <th>Name of the seed</th>
-            <th className="hide-sm">Number of the seed</th>
-            <th>Description</th>
+            <th className="hide-sm my-2">Name of the seed</th>
+            <th className="hide-sm my-2">Number of the seed</th>
+            <th className="hide-sm my-2">Description</th>
             <th></th>
           </tr>
         </thead>
