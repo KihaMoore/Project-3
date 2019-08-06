@@ -1,0 +1,6 @@
+{
+    "mongoURI":"mongodb+srv://kiha123:kiha123@first-cluster-b1aak.mongodb.net/test?retryWrites=true&w=majority",
+    "jwtSecret": "secret",
+    "githubClientId": "8682a75e5f6cde9f4ebb",
+    "githubSecret": "9d19c5e815168045efe224b341126c754c6c5799"
+}

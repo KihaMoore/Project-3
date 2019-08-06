@@ -1,5 +1,5 @@
 {
-  "name": "devconnector",
+  "name": "seed",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,8 @@
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix cliant && npm run build --prefix client"
   },
   "author": "Kiha Moore",
   "license": "MIT",

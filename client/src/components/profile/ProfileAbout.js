@@ -17,11 +17,11 @@ const ProfileAbout = ({
         <div className='line' />
       </Fragment>
     )}
-    <h4 className='text-primary'>Favorite plant</h4>
+    <h4 className='text-primary-m'>Favorite plant</h4>
     <div className='favoriteplants'>
       {favoriteplants.map((favoriteplant, index) => (
         <div key={index} className='p-1 noseedcollection'>
-          <i className='fas fa-check' /> {favoriteplant}
+          <i className='fas fa-leaf ' /> {favoriteplant}
         </div>
       ))}
     </div>
@@ -33,3 +33,4 @@ ProfileAbout.propTypes = {
 };
 
 export default ProfileAbout;
+

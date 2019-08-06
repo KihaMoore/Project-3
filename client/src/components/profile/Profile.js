@@ -40,7 +40,7 @@ const Profile = ({
             <ProfileTop profile={profile} />
             <ProfileAbout profile={profile} />
             <div className='profile-exp bg-light p-2'>
-              <h5 className='text-primary'>Seed collection</h5>
+              <h5 className='text-primary-m'>Seed collection</h5>
               {profile.seed.length > 0 ? (
                 <Fragment>
                   {profile.seed.map(seed => (
@@ -56,7 +56,7 @@ const Profile = ({
             </div>
 
             <div className='profile-edu bg-light p-2'>
-              <h5 className='text-primary'>Wish List</h5>
+              <h5 className='text-primary-m'>Wish List</h5>
               {profile.wishlist.length > 0 ? (
                 <Fragment>
                   {profile.wishlist.map(wishlist => (
@@ -67,7 +67,7 @@ const Profile = ({
                   ))}
                 </Fragment>
               ) : (
-                <h2 class="noseedcollection">No wish list</h2>
+                <h2 className="noseedcollection">No wish list</h2>
               )}
             </div>
           </div>
