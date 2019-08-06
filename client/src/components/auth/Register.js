@@ -35,7 +35,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   return (
     <Fragment>
       <img className="lavender-register" src="img/lavender.png" alt="" data-direction="up" data-speed="3"/>
-      <img class="bee-register" src="img/bumbble-bee.png" alt="" data-direction="up" data-speed="3"/>
+      <img className="bee-register" src="img/bumbble-bee.png" alt="" data-direction="up" data-speed="3"/>
       <h1 className='large text-primary'>Sign Up</h1>
       <p className='lead'>
         <i className='fas fa-user' /> Create Your Account

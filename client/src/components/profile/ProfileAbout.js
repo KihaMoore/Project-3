@@ -13,7 +13,7 @@ const ProfileAbout = ({
     {bio && (
       <Fragment>
         <h2 className='text-primary'>{name.trim().split(' ')[0]}'s Bio</h2>
-        <p>{bio}</p>
+        <h2>{bio}</h2>
         <div className='line' />
       </Fragment>
     )}
@@ -21,7 +21,7 @@ const ProfileAbout = ({
     <div className='favoriteplants'>
       {favoriteplants.map((favoriteplant, index) => (
         <div key={index} className='p-1 noseedcollection'>
-          <i className='fas fa-leaf ' /> {favoriteplant}
+          <i className='fas fa-leaf' /> {favoriteplant}
         </div>
       ))}
     </div>

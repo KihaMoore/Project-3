@@ -13,7 +13,6 @@ const EditProfile = ({
 }) => {
   const [formData, setFormData] = useState({
     location: '',
-    status: '',
     favoriteplants: '',
     bio: '',
     twitter: '',

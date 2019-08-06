@@ -6,7 +6,7 @@ import { deleteSeed} from '../../actions/profile';
 
 const Seed = ({ seed, deleteSeed }) => {
   const seeds = seed.map(seed => (
-    <th key={seed._id}>
+    <tr key={seed._id}>
       <td>{seed.seed}</td>
       <td className="hide-sm">{seed.number}</td>
       <td className="hide-sm">{seed.description}</td>
@@ -18,7 +18,7 @@ const Seed = ({ seed, deleteSeed }) => {
           Delete
         </button>
       </td>
-    </th>
+    </tr>
   ));
 
   return (
@@ -26,12 +26,12 @@ const Seed = ({ seed, deleteSeed }) => {
       <h2 className="my-2">My seed collections</h2>
       <table className="table">
         <thead>
-          <th>
+          <tr>
             <td>Name</td>
             <td className="hide-sm">Number of the seed</td>
             <td>Discroption</td>
             <td></td>
-          </th>
+          </tr>
         </thead>
         <tbody>{seeds}</tbody>
       </table>

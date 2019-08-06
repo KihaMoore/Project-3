@@ -20,7 +20,7 @@ const ProfileItem = ({
           View Profile
         </Link>
       </div>
-      <ul classNmame="text-primary-m">
+      <ul className="text-primary-m">
         {favoriteplants.slice(0, 4).map((favoriteplant, index) => (
           <li key={index} className='p lead'>
             <i className='fas fa-leaf' /> 

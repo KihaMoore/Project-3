@@ -50,7 +50,7 @@ const AddSeed = ({ addSeed, history }) => {
         <div className='form-group'>
           <input
             type='text'
-            placeholder='* number of the seed'
+            placeholder='number of the seed'
             name='number'
             value={number}
             onChange={e => onChange(e)}
