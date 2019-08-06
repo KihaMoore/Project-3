@@ -157,7 +157,7 @@ const Createprofile = ({
           Go Back
         </Link>
       </form>
-      <img class="cabedge1" src="../public/img/cabedge.png" alt="" data-direction="down" data-speed="0.1"/>
+      <img className="cabedge1" src="../public/img/cabedge.png" alt="" data-direction="down" data-speed="0.1"/>
     </Fragment>
   );
 };
