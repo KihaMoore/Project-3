@@ -6,7 +6,7 @@ import { deleteWishList } from '../../actions/profile';
 
 const WishList = ({ wishlist, deleteWishList }) => {
   const wishlists = wishlist.map(wish => (
-    <tr key={wish._id}>
+    <th key={wish._id}>
       <td>{wish.seed}</td>
       <td className="hide-sm">{wish.number}</td>
       <td className="hide-sm">{wish.description}</td>
@@ -19,7 +19,7 @@ const WishList = ({ wishlist, deleteWishList }) => {
           Delete
         </button>
       </td>
-    </tr>
+    </th>
   ));
 
   return (
@@ -27,12 +27,12 @@ const WishList = ({ wishlist, deleteWishList }) => {
       <h2 className="my-2">Your seed wish list</h2>
       <table className="table">
         <thead>
-          <tr>
-            <th className="hide-sm my-2">Name of the seed</th>
-            <th className="hide-sm my-2">Number of the seed</th>
-            <th className="hide-sm my-2">Description</th>
-            <th></th>
-          </tr>
+          <th>
+            <td className="hide-sm my-2">Name of the seed</td>
+            <td className="hide-sm my-2">Number of the seed</td>
+            <td className="hide-sm my-2">Description</td>
+            <td></td>
+          </th>
         </thead>
         <tbody>{wishlists}</tbody>
       </table>

@@ -27,19 +27,19 @@ const Profile = ({
       ) : (
         <Fragment>
           <Link to='/profiles' className='btn '>
-            Back To Profiles
+            Back To Gardeners
           </Link>
           {auth.isAuthenticated &&
             auth.loading === false &&
             auth.user._id === profile.user._id && (
               <Link to='/edit-profile' className='btn btn-dark'>
-                Edit Profile
+                Edit my Profile
               </Link>
             )}
           <div className='profile-grid my-1'>
             <ProfileTop profile={profile} />
             <ProfileAbout profile={profile} />
-            <div className='profile-exp bg-white p-2'>
+            <div className='profile-exp bg-light p-2'>
               <h5 className='text-primary'>Seed collection</h5>
               {profile.seed.length > 0 ? (
                 <Fragment>
@@ -51,11 +51,11 @@ const Profile = ({
                   ))}
                 </Fragment>
               ) : (
-                <h2 class="noseedcollection">No seeds collection</h2>
+                <h2 className="noseedcollection">No seeds collection</h2>
               )}
             </div>
 
-            <div className='profile-edu bg-white p-2'>
+            <div className='profile-edu bg-light p-2'>
               <h5 className='text-primary'>Wish List</h5>
               {profile.wishlist.length > 0 ? (
                 <Fragment>

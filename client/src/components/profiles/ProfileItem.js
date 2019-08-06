@@ -12,18 +12,19 @@ const ProfileItem = ({
 }) => {
   return (
     <div className='profile bg-light'>
-      <img src={avatar} alt='' className='round-img' />
+      <img src={avatar} alt='' className='round-img p' />
       <div>
-        <h2>{name}</h2>
-        <p className='my-1'>{location && <span>{location}</span>}</p>
+        <h2 className="large">{name}</h2>
+        <p className='my-1 lead'>{location && <span>{location}</span>}</p>
         <Link to={`/profile/${_id}`} className='btn btn-primary'>
           View Profile
         </Link>
       </div>
-      <ul>
+      <ul classNmame="text-primary-m">
         {favoriteplants.slice(0, 4).map((favoriteplant, index) => (
-          <li key={index} className='p'>
-            <i className='fas fa-check' /> {favoriteplant}
+          <li key={index} className='p lead'>
+            <i className='fas fa-leaf' /> 
+            {favoriteplant}
           </li>
         ))}
       </ul>

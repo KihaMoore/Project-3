@@ -29,7 +29,7 @@ const PostForm = ({ addPost }) => {
           onChange={e => setText(e.target.value)}
           required
         />
-        <input type='submit' className='btn btn-dark my-1' value='Submit' />
+        <input type='submit' className='btn btn-pink my-1' value='Submit' />
       </form>
     </div>
   );

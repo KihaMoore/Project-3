@@ -27,8 +27,8 @@ const Login = ({ login, isAuthenticated }) => {
 
   return (
     <Fragment>
-       <img class="ladybug-login" src="img/ladybug.png" alt="" data-direction="down" data-speed="0.5"/>
-       <img class="dandelion-login" src="img/Dandelion.png" alt="" data-direction="down" data-speed="0.5"/>
+       <img className="ladybug-login" src="img/ladybug.png" alt="" data-direction="down" data-speed="0.5"/>
+       <img className="dandelion-login" src="img/Dandelion.png" alt="" data-direction="down" data-speed="0.5"/>
       <h1 className='large text-primary'>Login</h1>
       <p className='lead'>
         <i className='fas fa-user' /> Log in Your Account
