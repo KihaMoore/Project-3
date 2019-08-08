@@ -35,7 +35,8 @@ const Landing = ({ isAuthenticated }) => {
     <Fragment>
       <section className="banner" data-direction="down" data-speed="0.5">
         <img className="beet1 banner-title" src="img/garlic.png" alt="" data-direction="down" data-speed="1.3" />
-        <img className="lemon" src="img/lemon.png" alt="" data-direction="down" data-speed="0.8" />
+        <img className="lemon" src="img/lemon.png" alt="" data-direction="down" data-speed="1" />
+        <img className="lemon1" src="img/lemon.png" alt="" data-direction="down" data-speed="0.8" />
         <img className="risu1" src="img/risu.png" alt="" data-direction="up" data-speed="0.5" />
         <img className="nut" src="img/nut.png" alt="" data-direction="up" data-speed="0.6" />
         <img className="cabedge1" src="img/cabedge.png" alt="" data-direction="down" data-speed="1" />
