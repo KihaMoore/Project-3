@@ -21,8 +21,8 @@ const PostItem = ({
       </Link>
     </div>
     <div>
-      <p className='my lead'>{text}</p>
-      <p className='post-date'>
+      <p className='my large'>{text}</p>
+      <p className='post-date large'>
         Posted on <Moment format='YYYY/MM/DD'>{date}</Moment>
       </p>
 

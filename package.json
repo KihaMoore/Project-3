@@ -38,6 +38,8 @@
   },
   "devDependencies": {
     "concurrently": "^4.1.1",
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "react-inlinesvg": "^1.1.5",
+    "svg-inline-loader": "^0.8.0"
   }
 }

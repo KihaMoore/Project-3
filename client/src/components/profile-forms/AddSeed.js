@@ -23,7 +23,7 @@ const AddSeed = ({ addSeed, history }) => {
 
   return (
     <Fragment>
-      <h1 className='large text-primary'>Add Your seed coolections</h1>
+      <h1 className='large text-primary'>Add Your seed collections</h1>
       <p className='lead'>
         <i className='fas fa-leaf' /> 
       </p>

@@ -7,11 +7,11 @@ const ProfileWishList = ({
 }) => (
   <div>
     <h2 className="text-dark noseedcollection">{seed}</h2>
-    <p>
+    <p className="noseedcollection">
       <strong className="noseedcollection">Number of the seed: </strong> {number}
     </p>
-    <p>
-      <strong>Description: </strong> {description}
+    <p className="noseedcollection">
+      <strong className="noseedcollection">Description: </strong> {description}
     </p>
   </div>
 );

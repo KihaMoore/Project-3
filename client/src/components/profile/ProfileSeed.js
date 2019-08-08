@@ -9,7 +9,7 @@ const ProfileSeed = ({
   <div>
     <h2 className="text-dark noseedcollection">{seed}</h2>
     <p className="noseedcollection">
-      <strong >Number of seed: </strong> {number}
+      <strong className="noseedcollection" >Number of seed: </strong> {number}
     </p>
     <p className="noseedcollection">
       <strong className="noseedcollection">Description: </strong> {description}

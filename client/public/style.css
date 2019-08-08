@@ -303,6 +303,7 @@ footer a {
 }
 
 
+
 @keyframes RightToLeft {
   0% {
     opacity: 0;/* 透明 */
@@ -322,6 +323,15 @@ h1 {
   /* animation-iteration-count: infinit; */
 }
 
+
+.falling{
+  position: absolute;
+  right: 5px;
+  top:1px;
+  max-width: 1000px;
+  z-index: -2;
+  opacity: 0.2;
+}
 /* scroll animation */
 
 .scroll {
@@ -342,6 +352,21 @@ h1 {
   animation: sdb 1.5s infinite;
   box-sizing: border-box;
 }
+
+.box{
+  position: fixed;
+  left: 0;
+  padding-left:23%;
+  padding-top:4%;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  -webkit-transition: all 1.9s ease; /* 1.2秒でフェードアウト */
+          transition: all 1.9s ease;
+  color: #fff; /* ローディングアニメーションカラー */
+   background-color: rgb(255, 242, 59)/* 背景カラー */
+}
+
 @-webkit-keyframes sdb {
   0% {
     -webkit-transform: rotateY(0) rotateZ(-45deg) translate(0, 0);

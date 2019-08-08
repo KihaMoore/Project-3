@@ -23,9 +23,10 @@ const Dashboard = ({
     <Spinner />
   ) : (
     <Fragment>
+      <img className="falling" src="img/loadingFlower.svg" alt=""/>
       <h1 className='large text-primary'></h1>
-      <p className='lead'>
-        <i className='fas fa-user' /> Welcome {user && user.name}
+      <p className='text-primary'>
+         Welcome back {user && user.name}!
       </p>
       {profile !== null ? (
         <Fragment>

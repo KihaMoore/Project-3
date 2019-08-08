@@ -29,7 +29,7 @@ const Seed = ({ seed, deleteSeed }) => {
           <tr>
             <td>Name</td>
             <td className="hide-sm">Number of the seed</td>
-            <td>Discroption</td>
+            <td>Description</td>
             <td></td>
           </tr>
         </thead>
